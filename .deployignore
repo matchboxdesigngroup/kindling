@@ -1,0 +1,18 @@
+## Directories to ignore
+/.budfiles/**
+/.vscode/**
+/node_modules/**
+/wp-content/themes/**/node_modules/**
+
+## Files to ignore
+.deployignore
+.env.*
+.DS_Store
+CHANGELOG.md
+composer.json
+composer.lock
+package-lock.json
+package.json
+phpcs.xml
+README.md
+yarn.lock
