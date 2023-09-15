@@ -14,10 +14,15 @@ vendor/
 # Dotenv
 .env
 .env.*
-!.env.example
+!.env.sample
 
-# WordPress specific
+#DDEV
+.ddev/*
+!.ddev/config.yaml
+
+# WordPress specifics
 wp-config.php
+wp-config-ddev.php
 wp-content/advanced-cache.php
 wp-content/backup-db/*
 wp-content/blogs.dir/
@@ -25,12 +30,10 @@ wp-content/cache/*
 wp-content/cache/supercache/*
 wp-content/plugins/
 wp-content/themes/twenty*
-wp-content/uploads/*
-!wp-content/uploads/maxmegamenu/
-wp-content/uploads/maxmegamenu/*
-!wp-content/uploads/maxmegamenu/style.css
+wp-content/uploads/
 wp-content/upgrade/*
 wp-content/wp-cache-config.php
+wp-content/mu-plugins/wp-migrate-db-pro-compatibility.php
 
 # Theme specific
 
