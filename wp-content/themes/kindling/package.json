@@ -1,0 +1,54 @@
+{
+  "name": "kindling",
+  "private": true,
+  "engines": {
+    "node": ">=16.0.0",
+    "yarn": ">=1.22",
+    "npm": "please-use-yarn"
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "devDependencies": {
+    "@wordpress/block-editor": "^12.6.0",
+    "@wordpress/blocks": "^12.15.0",
+    "@wordpress/components": "^25.4.0",
+    "@wordpress/element": "^5.15.0",
+    "@wordpress/hooks": "^3.38.0",
+    "@wordpress/icons": "^9.29.0",
+    "@wordpress/scripts": "^26.4.0",
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "2.29.1",
+    "browser-sync-webpack-plugin": "2.3.0",
+    "classnames": "^2.3.2",
+    "dotenv": "^16.0.3",
+    "file-loader": "^6.2.0",
+    "postcss": "^8.4.24",
+    "stylelint": "^14.13.0",
+    "stylelint-config-prettier": "9.0.5",
+    "tailwindcss": "^3.3.2",
+    "wicg-inert": "^3.1.2"
+  },
+  "dependencies": {
+    "aos": "^3.0.0-beta.6",
+    "caniuse-lite": "^1.0.30001520",
+    "glob": "^10.2.7",
+    "image-webpack-loader": "^8.1.0",
+    "swiper": "^9.3.0"
+  },
+  "scripts": {
+    "build": "wp-scripts build --webpack-src-dir=assets",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "dev": "wp-scripts start --webpack-src-dir=assets --hot",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js"
+  }
+}

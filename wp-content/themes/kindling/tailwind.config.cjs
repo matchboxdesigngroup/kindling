@@ -19,7 +19,7 @@ module.exports = {
       'transparent': 'transparent',
       'error': '#ff0000',
     },
-    fontFamily: { /* TODO - this needs to match what is in the theme.json if we are using that method for fonts */
+    fontFamily: { /* TODO - this needs to match what is in the theme.json if we are using classes like `font-sans` to set a font */
       sans: ['greycliff-cf', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', 'sans-serif'],
       serif: ['Roboto Slab', 'Times New Roman', 'Times', 'serif'],
     },

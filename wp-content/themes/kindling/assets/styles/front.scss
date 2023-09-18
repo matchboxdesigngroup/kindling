@@ -1,0 +1,17 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './base/global';
+@import './base/overrides';
+
+@import './utilities/icons';
+@import './utilities/utilities';
+
+@import './components/sections/header';
+@import './components/sections/footer';
+@import './components/gravity-forms';
+@import './components/breadcrumbs';
+@import './components/buttons';
+@import './components/slider-block';
+@import './components/blocks';

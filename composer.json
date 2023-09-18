@@ -17,7 +17,7 @@
       "type": "package",
       "package": {
         "name": "advanced-custom-fields/advanced-custom-fields-pro",
-        "version": "6.0.5",
+        "version": "6.2",
         "type": "wordpress-plugin",
         "dist": {
           "type": "zip",
@@ -27,7 +27,7 @@
     }
   ],
   "require": {
-    "php": "^7.4|^8.0",
+    "php": "^8.0",
     "composer/installers": "^2.1",
     "vlucas/phpdotenv": "^5.4",
     "oscarotero/env": "^2.1",
@@ -39,7 +39,7 @@
     "wpackagist-plugin/disable-comments": "*",
     "wpackagist-plugin/query-monitor": "*",
     "wpackagist-plugin/redirection": "*",
-    "wpackagist-plugin/svg-support": "*",
+    "wpackagist-plugin/safe-svg": "*",
     "wpackagist-plugin/duplicate-post": "*",
     "wpackagist-plugin/wordpress-seo": "*",
     "wpackagist-theme/twentytwentytwo": "*"

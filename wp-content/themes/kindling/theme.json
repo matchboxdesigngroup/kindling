@@ -529,7 +529,7 @@
               }
             },
             "color": {
-              "text": "var(--wp--preset--color-custom-silgan-pfc-dark-blue)"
+              "text": "var(--wp--preset--color-dark-blue)"
             },
             "typography": {
               "textDecoration": "none"
@@ -738,7 +738,7 @@
           }
         },
         "color": {
-          "text": "var(--wp--preset--color-custom-silgan-pfc-blue)"
+          "text": "var(--wp--preset--color-blue)"
         },
         "typography": {
           "textDecoration": "underline"

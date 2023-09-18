@@ -1,0 +1,9 @@
+/node_modules
+/vendor
+/dist
+/build
+/public
+.env
+.budfiles
+npm-debug.log
+yarn-error.log

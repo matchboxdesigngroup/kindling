@@ -1,0 +1,48 @@
+.icon {
+  @apply h-5 w-5;
+
+  &-3xs {
+    @apply w-1 h-1;
+  }
+
+  &-2xs {
+    @apply w-2 h-2;
+  }
+
+  &-xs {
+    @apply w-3 h-3;
+  }
+
+  &-sm {
+    @apply w-4 h-4;
+  }
+
+  &-lg {
+    @apply w-6 h-6;
+  }
+
+  &-xl {
+    @apply w-8 h-8;
+  }
+
+  &-2xl {
+    @apply w-10 h-10;
+  }
+
+  &-separator {
+    @apply mx-3;
+  }
+
+  &-chevron-right {
+    @apply relative;
+
+    &::before {
+      @apply bg-black content-[''] h-6 w-6 absolute left-0;
+      mask-image: url(../images/chevron-right-solid.svg);
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: 24px 24px;
+    }
+
+  }
+}
