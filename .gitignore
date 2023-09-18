@@ -38,6 +38,7 @@ wp-content/mu-plugins/wp-migrate-db-pro-compatibility.php
 # Theme specific
 
 # Plugin specific
+wp-content/db.php
 
 # WP Engine specific
 .smushit-status
