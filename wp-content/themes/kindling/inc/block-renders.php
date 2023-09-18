@@ -1,6 +1,6 @@
 <?php
 
-include dirname(__DIR__) . '/assets/scripts/blocks/child-page-navigation-link/index.php';
+include dirname(__DIR__) . '/assets/blocks/child-page-navigation-link/index.php';
 add_action( 'init', 'register_block_child_page_navigation_link' );
 
 /**
