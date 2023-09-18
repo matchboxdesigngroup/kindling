@@ -1,0 +1,82 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './base/global';
+@import './base/overrides';
+
+@import './utilities/icons';
+@import './utilities/utilities';
+
+@import './components/sections/header';
+@import './components/sections/footer';
+@import './components/gravity-forms';
+@import './components/breadcrumbs';
+@import './components/buttons';
+@import './components/slider-block';
+@import './components/blocks';
+
+/**
+ * Editor page title field
+ */
+ .post-type-page {
+  .edit-post-visual-editor__post-title-wrapper {
+    @apply mt-6 mb-6;
+
+    .wp-block-post-title {
+      @apply text-3xl m-0 font-normal;
+
+      color: #3C4043;
+
+      &::before {
+        @apply inline;
+
+        color: #667080;
+        content: 'Title: '
+      }
+
+      &::after {
+        @apply text-sm block max-w-2xl px-2 py-3 mt-2;
+
+        background-color: #F3F2E9;
+        border-left: 4px solid var(--wp-components-color-accent, var(--wp-admin-theme-color, #4ab866));
+        color: #3C4043;
+        content: 'The title is used for non-visual purposes i.e. SEO, to autogenerate a url or permalink, and it appears in social share and search engine "cards" as the title of the page or post.';
+      }
+    }
+  }
+}
+
+/**
+ * Block overrides
+ *
+ * This section adds theme specific overrides to ensure the editor
+ * reflects the styles of the frontend.
+ */
+
+.wp-block[data-type="core/widget-area"] {
+  @apply max-w-[98%];
+}
+
+.blocks-widgets-container {
+  .editor-styles-wrapper {
+    @apply max-w-full;
+  }
+}
+
+ul.block-editor-block-list__block {
+  margin-left: 16px !important;
+}
+
+/* ACF block 'edit' mode ui */
+a.link-url {
+  @apply text-[#2271b1];
+
+  &:hover {
+    @apply text-[#1269b0];
+  }
+}
+
+a.acf-icon {
+  @apply no-underline;
+}

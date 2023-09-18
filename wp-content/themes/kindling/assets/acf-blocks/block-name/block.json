@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "kindling/block-name",
+  "title": "Block Name",
+  "description": "An sample ACF block",
+  "category": "text",
+  "icon": "excerpt-view",
+  "keywords": ["example"],
+  "version": "1.0.0",
+  "textdomain": "kindling",
+  "supports": {
+    "align": false,
+    "multiple": false,
+    "anchor": false
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block-name.php"
+  }
+}

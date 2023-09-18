@@ -1,0 +1,73 @@
+/* Background Video */
+.background-video-wrapper {
+  @apply h-auto overflow-hidden relative;
+}
+
+/* Background overlay */
+.bg-overlay {
+  &::after {
+    @apply content-[''] block absolute inset-0 w-full h-full bg-black bg-opacity-60;
+  }
+}
+
+/* Aspect ratio. */
+.aspect-ratio {
+
+  // Add wrapper class `.aspect-ratio__wrapper` to the outermost container with a nested img tag.
+  &__wrapper {
+    @apply overflow-hidden relative;
+
+    img {
+      @apply object-cover absolute block h-full left-0 bottom-0 right-0 top-0 w-full;
+    }
+  }
+
+  /* Add appropriate class to the element wrapping the <img>. */
+  /* note: Aspect ratio will be handled by WP Core soon */
+
+  /* 1:1 Aspect Ratio (Square). */
+  &__1-1 {
+    @apply before:content-[''] before:block before:w-full before:pt-[100%];
+  }
+
+  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625). */
+  &__16-9 {
+    @apply before:content-[''] before:block before:w-full before:pt-[56.25%];
+  }
+
+  /* 4:3 Aspect Ratio (divide 3 by 4 = 0.75). */
+  &__4-3 {
+    @apply before:content-[''] before:block before:w-full before:pt-[75%];
+  }
+}
+
+/*
+ * Box shadow - note: this style exists for some blocks with theme.json
+ * settings but its a global setting for now.
+ */
+.box-shadow {
+  &--xs {
+    box-shadow: 0px 2px 4px -2px rgba(16, 24, 40, 0.1), 0px 4px 6px -1px rgba(16, 24, 40, 0.1);
+  }
+  &--sm {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
+  }
+  &--md {
+    box-shadow: 0px 25px 50px -12px rgba(16, 24, 40, 0.1);
+  }
+  &--large {
+    box-shadow: 0px 25.697px 72.8081px rgba(95, 99, 104, 0.08);
+  }
+}
+
+.card-latest-news {
+  @apply border-solid border border-[#ededed];
+
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02),
+              0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0151852),
+              0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0121481),
+              0px 20px 13px rgba(0, 0, 0, 0.01),
+              0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185),
+              0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00481481);
+}
+

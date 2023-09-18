@@ -1,0 +1,16 @@
+body {
+  .editor-styles-wrapper,
+  .wp-site-blocks {
+    footer,
+    main {
+      margin-block-start: 0;
+    }
+
+    .is-layout-constrained,
+    .is-layout-flow {
+      :where(.has-background) {
+        margin-block-start: 0;
+      }
+    }
+  }
+}
