@@ -58,6 +58,11 @@ module.exports = {
     ...defaultConfig.resolve,
     extensions: ['.js', '.scss'],
   },
+  stats: {
+    all: false, // Disable all stats output
+    errors: true, // Show errors only
+    errorDetails: true, // Display error details
+  },
   plugins: [
     ...defaultConfig.plugins,
     // Replace LiveReload with BrowserSync in order to watch the PHP files
