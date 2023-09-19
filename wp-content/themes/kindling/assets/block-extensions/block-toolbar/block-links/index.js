@@ -87,7 +87,7 @@ function applyExtraClass( extraProps, blockType, attributes ) {
 		typeof href !== 'undefined' &&
 		href
 	) {
-		extraProps.className = classnames( extraProps.className, 'mdg-linked-block' );
+		extraProps.className = classnames( extraProps.className, 'kindling-linked-block' );
   }
 
   return extraProps;
