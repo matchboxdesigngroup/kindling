@@ -1,0 +1,24 @@
+/* Site logo - mobile second logo */
+.editor-styles-wrapper .wp-block-site-logo,
+.wp-block-site-logo {
+  @apply block;
+
+  @media (max-width: 996px) {
+    @apply hidden;
+  }
+}
+
+.editor-styles-wrapper .wp-block-site-logo--mobile,
+.wp-block-site-logo--mobile {
+  @apply hidden py-2;
+
+  @media (max-width: 996px) {
+    @apply block;
+  }
+
+  img.custom-logo {
+    @media (max-width: 996px) {
+      @apply w-[60px];
+    }
+  }
+}
