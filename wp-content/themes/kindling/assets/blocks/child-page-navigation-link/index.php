@@ -89,6 +89,7 @@ function render_block_child_page_navigation_link( $attributes, $content ) {
 
 /**
  * Registers the `kindling/child-page-navigation-link` block on the server side.
+ * Used to support block.json - since this was adopted from a core block.
  */
 function register_block_child_page_navigation_link() {
 	register_block_type_from_metadata(

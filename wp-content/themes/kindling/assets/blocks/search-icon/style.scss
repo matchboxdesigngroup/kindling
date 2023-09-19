@@ -1,0 +1,40 @@
+/* Custom search icon block */
+.kindling-search-link {
+  @apply flex;
+
+  a.kindling-search-link__link {
+    @apply inline-flex items-center justify-center no-underline hover:no-underline scale-100 hover:scale-110 transition duration-100 ease-out origin-center leading-none;
+
+    svg {
+      &.search-icon {
+        // inherit color from wrapping <a>
+        // color is managed by block editor with dynamic inline styles
+        stroke: currentColor;
+      }
+    }
+  }
+
+  &.has-small-icon-size {
+    a svg {
+      @apply text-[16px] w-[20px] h-[20px];
+    }
+  }
+
+  &.has-medium-icon-size {
+    a svg {
+      @apply text-[24px] w-[30px] h-[30px];
+    }
+  }
+
+  &.has-large-icon-size {
+    a svg {
+      @apply text-[36px] w-[45px] h-[45px];
+    }
+  }
+
+  &.has-huge-icon-size {
+    a svg {
+      @apply text-[48px] w-[60px] h-[60px];
+    }
+  }
+}
