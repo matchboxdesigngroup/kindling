@@ -22,7 +22,7 @@ function render_link_toolbar( $block_content, $block ) {
     $attributes = $block['attrs'];
 
     if ( isset( $attributes['href'] ) && ! empty( $attributes['href'] ) ) {
-      $linked = '<a href="' . esc_attr( $attributes['href'] ) . '" class="mdg-block-link"';
+      $linked = '<a href="' . esc_attr( $attributes['href'] ) . '" class="kindling-block-link"';
       $rel    = ' rel="';
 
       if ( isset( $attributes['opensInNewTab'] ) && $attributes['opensInNewTab'] ) {
