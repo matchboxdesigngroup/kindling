@@ -23,6 +23,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 /**
+ * Custom Blocks and Block Extensions
+ */
+import '../blocks/slider-vertical/swiper-init';
+
+/**
  * Frontend scripts
  */
 document.addEventListener('DOMContentLoaded', function () {

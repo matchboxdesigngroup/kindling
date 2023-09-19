@@ -10,13 +10,12 @@ import {
 	useBlockProps,
   BlockControls,
   InnerBlocks,
-  RichText,
 } from '@wordpress/block-editor';
 import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
 import { useSelect, useDispatch } from '@wordpress/data';
 
 const TEMPLATE = [
-  [ 'kindling/slide-block', { placeholder: 'Enter side content...' } ],
+  [ 'kindling/slide-block', { placeholder: 'Enter slide content...' } ],
 ];
 
 registerBlockType( 'kindling/slider-block', {
@@ -29,25 +28,13 @@ registerBlockType( 'kindling/slider-block', {
       padding: true,
     },
   },
-  attributes: {
-    textString: {
-      type: 'string',
-      selector: 'h4',
-    },
-  },
 
   edit(props) {
 		const blockProps = useBlockProps({
       className: 'wp-block-kindling-slider-block slider-block swiper',
     });
 
-    const { setAttributes, attributes, clientId } = props;
-
-    function onTextChange(changes) {
-      setAttributes({
-          textString: changes,
-      });
-    }
+    const { attributes, clientId } = props;
 
     const { replaceInnerBlocks } = useDispatch( 'core/block-editor' );
     const innerBlocks = useSelect(
@@ -55,12 +42,8 @@ registerBlockType( 'kindling/slider-block', {
       [ clientId ]
     );
 
-    const addNewSlide = () => {
-      const slideBlock = createBlock('kindling/slide-block', {}, [
-        createBlock('core/heading', { level: 4, placeholder: 'Enter heading...' }),
-        createBlock('core/paragraph', { placeholder: 'Enter text...' }),
-        createBlock('core/button', { text: 'Click me' }),
-      ]);
+    const addNewSlide = (blocksToAdd = []) => {
+      const slideBlock = createBlock('kindling/slide-block', {}, blocksToAdd);
 
       replaceInnerBlocks(clientId, [...innerBlocks, slideBlock], false);
     };
@@ -72,36 +55,21 @@ registerBlockType( 'kindling/slider-block', {
             <ToolbarButton
               icon="plus"
               title="Add Slide"
-              onClick={addNewSlide}
+              onClick={() => addNewSlide()}
               disabled={ ! props.isSelected }
             />
           </ToolbarGroup>
         </BlockControls>
-        {/* TODO - make this a heading block instead of a richtext field */}
-        {/* <RichText
-          tagName="h4"
-          value={attributes.textString}
-          onChange={onTextChange}
-          placeholder="Add a heading"
-        /> */}
         <div {...blockProps}>
           <div className='swiper-wrapper'>
             <InnerBlocks
               template={ TEMPLATE }
             />
           </div>
-          <div className='slider-block__pagination-wrapper'>
-             <RichText
-                tagName="h4"
-                value={attributes.textString}
-                onChange={onTextChange}
-                placeholder="Add a heading"
-              />
-            <div className='slider-block-pagination'></div>
+          <div className='slider-block__swiper-nav'>
+            <div className='slider-block__button--prev'></div>
+            <div className='slider-block__button--next'></div>
           </div>
-
-          <div className='slider-block__button--prev'></div>
-          <div className='slider-block__button--next'></div>
         </div>
       </div>
 		);
@@ -115,10 +83,6 @@ registerBlockType( 'kindling/slider-block', {
     return (
 
       <div {...blockProps}>
-        <div className='slider-block__pagination-wrapper'>
-          <h3 className='slider-block__heading'>{attributes.textString}</h3>
-          <div className='slider-block__pagination'></div>
-        </div>
         <div className='swiper-wrapper'>
           <InnerBlocks.Content />
         </div>
@@ -145,12 +109,6 @@ registerBlockType( 'kindling/slide-block', {
 
     return (
       <InnerBlocks
-        allowedBlocks={ ['core/heading', 'core/paragraph', 'core/button'] }
-        template={ [
-          [ 'core/heading', { level: 4, placeholder: 'Enter heading...' } ],
-          [ 'core/paragraph', { placeholder: 'Enter text...' } ],
-          [ 'core/button', { text: 'Click me' } ],
-        ] }
         templateLock={ false }
       />
 		);

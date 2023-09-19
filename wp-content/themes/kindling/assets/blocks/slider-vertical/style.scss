@@ -11,55 +11,14 @@
 }
 /* End Editor only */
 
+.wp-block[data-type="kindling/slider-block"],
 .slider-block {
   @apply flex w-full relative;
 
-  &::before {
-    @apply content-[''] bg-blue absolute bottom-0 right-0 shadow-sm;
-
-    height: calc(100% - 84px);
-    width: 685px;
-  }
-
-  &__heading {
-    @apply text-white font-semibold text-5xl leading-tight mt-0 mb-14;
-  }
-
-  &__pagination-wrapper {
-    @apply min-w-[640px] min-h-[550px] bg-blue p-14 z-20 mb-[84px];
-  }
-
-  &__pagination {
-    .pagination-item {
-      @apply text-2xl font-light leading-snug text-blue pl-[110px];
-
-      // TODO is there a setting to disable the pagination swiper styles per variation or entirely?
-      // TODO cont... maybe if those styles just aren't loaded? Right now it's loading the entire bundle of styles and features
-      &.swiper-pagination-bullet-active {
-        @apply font-bold text-white relative;
-
-        background: unset;
-        opacity: unset;
-
-        &::before {
-          @apply content-[''] absolute w-[80px] h-[5px] bg-black left-0 top-1/2 transform -translate-y-1/2;
-        }
-      }
-
-      &.swiper-pagination-bullet {
-        @apply w-full;
-
-        background: unset;
-        border-radius: unset;
-        height: unset;
-        opacity: unset;
-      }
-    }
-  }
-
   // (Single) Slide block
   .swiper-wrapper {
-    @apply mt-[84px] pl-[94px] z-[1] pt-[84px] pb-[84px];
+    @apply z-[1] pb-[84px];
+    //mt-[84px] pl-[94px] z-[1] pt-[84px] pb-[84px]
   }
 
   .swiper-slide {
@@ -67,13 +26,8 @@
   }
 }
 
-// Pagination overrides
-.swiper-pagination-vertical.swiper-pagination-bullets,
-.swiper-vertical > .swiper-pagination-bullets {
-  @apply relative left-0 right-auto top-0 transform-none;
-}
-
 // Nav Arrows
+.wp-block[data-type="kindling/slider-block"] .slider-block__swiper-nav,
 .slider-block__swiper-nav {
   @apply absolute bottom-4 flex flex-row left-1/2 -translate-x-1/2 gap-[25px] z-20;
 

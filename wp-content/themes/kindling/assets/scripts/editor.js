@@ -7,10 +7,11 @@ import { unregisterBlockStyle } from '@wordpress/blocks';
 import '../styles/editor.scss';
 
 /**
- * Custom Blocks.
+ * Custom Blocks and Block Extensions
  */
 import '../blocks/publications-taxonomy-terms-list';
 import '../blocks/search-icon';
+import '../blocks/slider-vertical';
 
 /**
  * Mobile Site Logo
