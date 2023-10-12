@@ -1,6 +1,21 @@
 {
   "name": "kindling",
   "private": true,
+  "description": "A WordPress block theme by the Matchbox Design Group",
+	"author": "Matchbox Design Group",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"theme"
+	],
+	"homepage": "https://github.com/matchboxdesigngroup/kindling#readme",
+  "repository": {
+		"type": "git",
+		"url": "git+https://github.com/matchboxdesigngroup/kindling.git"
+	},
+	"bugs": {
+		"url": "https://github.com/matchboxdesigngroup/kindling/issues"
+	},
   "engines": {
     "node": ">=16.0.0",
     "yarn": ">=1.22",
