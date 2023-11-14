@@ -14,6 +14,7 @@
 @import './components/breadcrumbs';
 @import './components/buttons';
 @import './components/slider-block';
+@import './components/navigation';
 @import './components/blocks';
 
 @import '../blocks/search-icon/style.scss';
@@ -26,7 +27,7 @@
 /**
  * Editor page title field
  */
- .post-type-page {
+.post-type-page {
   .edit-post-visual-editor__post-title-wrapper {
     @apply mt-6 mb-6;
 

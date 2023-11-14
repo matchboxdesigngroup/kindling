@@ -1,0 +1,90 @@
+.site-header {
+  @media screen and (min-width: 861px) {
+    .wp-block-navigation-link a {
+      &:hover {
+        @apply text-dark-blue;
+      }
+
+      a:where(:not(.wp-element-button)) {
+        &:hover {
+          @apply text-dark-blue;
+        }
+      }
+    }
+
+    .wp-block-navigation__responsive-container-content {
+      a.wp-block-navigation-item__content {
+        &:hover {
+          @apply text-dark-blue;
+        }
+      }
+
+      .wp-block-navigation-submenu:hover {
+        .wp-block-navigation__submenu-icon svg {
+          @apply stroke-dark-grey;
+        }
+      }
+
+      .wp-block-navigation__submenu-container {
+        @apply py-1 z-50;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1250px) {
+    .wp-block-navigation__responsive-container-open {
+      @apply w-10 h-10 bg-white rounded;
+
+      /* hamburger button show at 1250 */
+      display: block !important;
+
+      svg {
+        @apply mx-auto fill-dark-grey;
+      }
+    }
+
+    .wp-block-navigation__responsive-container-close {
+      @apply top-2;
+
+      svg {
+        @apply fill-dark-grey;
+      }
+    }
+
+    .wp-block-navigation__responsive-container:not(.is-menu-open.has-modal-open) {
+      /* full menu hide at 1250 */
+      display: none !important;
+    }
+
+    .wp-block-navigation__responsive-container.has-modal-open {
+      @apply bg-white;
+      background-color: theme('colors.light-grey');
+
+      ul.wp-block-navigation__container {
+        @apply items-center w-auto mx-auto gap-6;
+
+        li.wp-block-navigation-item {
+          @apply items-center w-full;
+
+          a.wp-block-navigation-item__content {
+            @apply text-dark-grey uppercase text-xl font-semibold;
+          }
+
+          .wp-block-navigation__submenu-container {
+            @apply pt-2;
+
+            a {
+              @apply text-base font-medium;
+            }
+          }
+        }
+      }
+    }
+
+    body:not(.admin-bar) {
+      .wp-block-navigation__responsive-close {
+        @apply pt-2;
+      }
+    }
+  }
+}
