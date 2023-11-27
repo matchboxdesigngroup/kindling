@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       document.querySelector(this.getAttribute('href')).scrollIntoView({
-        block: 'center',
+        block: 'start',
         behavior: 'smooth',
       });
     });
