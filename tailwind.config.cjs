@@ -27,8 +27,8 @@ module.exports = {
       /* min-width */
       '2xs': '320px', /* Small Phone */
       'xs': '375px', /* Phone */
-      'sm': '425px', /* Large Phone, Small Tablet */
-      'md': '768px', /* Tablet */
+      'sm': '525px', /* Large Phone, Small Tablet */
+      'md': '781px', /* Tablet */
       'ml': '960px', /* Small Laptop */
       'lg': '1100px', /* Laptop */
       'xl': '1240px', /* Container size */
@@ -38,8 +38,8 @@ module.exports = {
       /* max-width - Only if needed to override core styles that use max-width */
       '-2xs': { max: '320px' }, /* Small Phone */
       '-xs': { max: '375px' }, /* Phone */
-      '-sm': { max: '425px' }, /* Large Phone, Small Tablet */
-      '-md': { max: '768px' }, /* Tablet */
+      '-sm': { max: '525px' }, /* Large Phone, Small Tablet */
+      '-md': { max: '781px' }, /* Tablet */
       '-ml': { max: '960px' }, /* Small Laptop */
       '-lg': { max: '1100px' }, /* Laptop */
       '-xl': { max: '1240px' }, /* Container size */
