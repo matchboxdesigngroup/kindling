@@ -1,5 +1,4 @@
 {
-  "$schema": "https://schemas.wp.org/wp/6.3/theme.json",
   "customTemplates": [
     {
       "name": "blank",
@@ -11,6 +10,9 @@
     }
   ],
   "settings": {
+    "background": {
+      "backgroundImage": true
+    },
     "appearanceTools": true,
     "blocks": {
       "core/cover": {
@@ -772,5 +774,6 @@
       "title": "Footer"
     }
   ],
-  "version": 2
+  "version": 2,
+  "$schema": "https://schemas.wp.org/wp/6.4/theme.json"
 }
