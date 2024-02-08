@@ -13,11 +13,6 @@ import '../blocks/publications-taxonomy-terms-list';
 import '../blocks/search-icon';
 
 /**
- * Enable Grid Support
- */
-import '../block-extensions/grid-variation/grid-variation';
-
-/**
  * Mobile Site Logo
  * Filter the existing Site Logo block and add additional image
  */
