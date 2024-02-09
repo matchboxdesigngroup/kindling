@@ -1,6 +1,8 @@
 body {
+
   .editor-styles-wrapper,
   .wp-site-blocks {
+
     footer,
     main {
       margin-block-start: 0;
@@ -11,6 +13,19 @@ body {
       :where(.has-background) {
         margin-block-start: 0;
       }
+    }
+  }
+
+  // Fixes an issue with WP 6.4.3 and heading text color.
+  .editor-styles-wrapper {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: inherit;
     }
   }
 }
