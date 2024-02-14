@@ -47,6 +47,7 @@ module.exports = {
     ...defaultConfig.entry,
     front: path.resolve(process.cwd(), `${entryPath}/scripts`, 'front.js'),
     editor: path.resolve(process.cwd(), `${entryPath}/scripts`, 'editor.js'),
+    blockVariations: path.resolve(process.cwd(), `${entryPath}/scripts`, 'blockVariations.js')
   },
   output: {
     ...defaultConfig.output,
