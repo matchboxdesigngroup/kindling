@@ -14,9 +14,33 @@
  * @param  string $path Unmodified local path for acf-json.
  * @return string       Our modified local path for acf-json.
  */
-add_filter('acf/settings/save_json', function( $path ) {
-    $path = get_stylesheet_directory() . '/assets/acf-json';
-    return $path;
+add_filter('acf/settings/save_json', function ($path) {
+  $path = get_stylesheet_directory() . '/assets/acf-json';
+  return $path;
+});
+
+/**
+ * Adds a custom path for loading ACF JSON field groups.
+ *
+ * This function modifies the default paths where Advanced Custom Fields (ACF)
+ * looks for JSON files containing field group configurations. By adding a custom
+ * path, ACF will check this directory when loading field groups, allowing for
+ * synchronization and version control of field settings.
+ *
+ * @param array $paths Existing array of paths where ACF looks for JSON files.
+ * @return array Modified array of paths including the new custom path.
+ */
+add_filter('acf/settings/load_json', function ($paths) {
+  // Define the custom path where ACF JSON files are stored.
+  // get_stylesheet_directory() points to the current child theme directory.
+  // You can change this to get_template_directory() if you are working with a parent theme.
+  $custom_path = get_stylesheet_directory() . '/assets/acf-json';
+
+  // Append the custom path to the existing paths array.
+  $paths[] = $custom_path;
+
+  // Return the modified paths array back to ACF.
+  return $paths;
 });
 
 /**
