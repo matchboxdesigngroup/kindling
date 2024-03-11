@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ACF Blocks
  *
@@ -50,10 +51,11 @@ add_filter('acf/settings/load_json', function ($paths) {
  *
  * @return void
  */
-function kindling_register_acf_blocks() {
-    register_block_type( dirname(__DIR__, 1) . '/assets/acf-blocks/block-name' );
+function kindling_register_acf_blocks()
+{
+  register_block_type(dirname(__DIR__, 1) . '/assets/acf-blocks/block-name');
 }
-add_action( 'init', 'kindling_register_acf_blocks' );
+add_action('init', 'kindling_register_acf_blocks');
 
 /**
  * Generates CSS styles for spacing properties (margin and padding) based on the provided block configuration.
@@ -66,34 +68,36 @@ add_action( 'init', 'kindling_register_acf_blocks' );
 // Usage example:
 // $styles = generateSpacingStyles($block);
 
-function generateSpacingStyles(array $block): string {
+function generateSpacingStyles(array $block): string
+{
   $styles = '';
   $spacing_properties = ['margin', 'padding'];
 
   // Iterate through the spacing properties (margin and padding)
   foreach ($spacing_properties as $spacing) {
-      // Iterate through the sides (top, right, bottom, left)
-      foreach (['top', 'right', 'bottom', 'left'] as $side) {
-          // Check if the side is defined for the current spacing property
-          if (isset($block['style']['spacing'][$spacing][$side])) {
-              $value = $block['style']['spacing'][$spacing][$side];
-              // Check if the value is not an empty string
-              if ($value !== '') {
-                  $styles .= "{$spacing}-{$side}:{$value};";
-              }
-          }
+    // Iterate through the sides (top, right, bottom, left)
+    foreach (['top', 'right', 'bottom', 'left'] as $side) {
+      // Check if the side is defined for the current spacing property
+      if (isset($block['style']['spacing'][$spacing][$side])) {
+        $value = $block['style']['spacing'][$spacing][$side];
+        // Check if the value is not an empty string
+        if ($value !== '') {
+          $styles .= "{$spacing}-{$side}:{$value};";
+        }
       }
+    }
   }
 
   return $styles;
 }
 
 /**
-* Function to handle link HTML generation.
-*
-* @param array $link Associative array containing the link attributes.
-*/
-function print_link($link) {
+ * Function to handle link HTML generation.
+ *
+ * @param array $link Associative array containing the link attributes.
+ */
+function print_link($link)
+{
   if ($link) {
     $link_title = !empty($link['title']) ? esc_html($link['title']) : '';
     $link_url   = !empty($link['url']) ? esc_url($link['url']) : '';
@@ -104,16 +108,17 @@ function print_link($link) {
 }
 
 // Validate ACF fields with Gutenberg
-function _validate_save_post() {
+function _validate_save_post()
+{
 
-    // bail early if no $_POST
-    $acf = false;
-    foreach($_POST as $key => $value) {
-        if (strpos($key, 'acf') === 0) {
-            if (! empty( $_POST[$key] ) ) {
-                acf_validate_values( $_POST[$key], $key);
-            }
-        }
+  // bail early if no $_POST
+  $acf = false;
+  foreach ($_POST as $key => $value) {
+    if (strpos($key, 'acf') === 0) {
+      if (!empty($_POST[$key])) {
+        acf_validate_values($_POST[$key], $key);
+      }
     }
+  }
 }
-add_action( 'acf/validate_save_post', '_validate_save_post', 5 );
+add_action('acf/validate_save_post', '_validate_save_post', 5);
