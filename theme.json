@@ -165,7 +165,7 @@
               "fontStyle": "normal",
               "fontWeight": "100",
               "src": [
-                "file:./assets/fonts/proxima-nova/proxima-nova-thin.otf"
+                "file:./assets/fonts/proxima-nova-thin.otf"
               ]
             },
             {
@@ -174,7 +174,7 @@
               "fontStyle": "italic",
               "fontWeight": "100",
               "src": [
-                "file:./assets/fonts/proxima-nova/proxima-nova-thin-it.otf"
+                "file:./assets/fonts/proxima-nova-thin-it.otf"
               ]
             },
             {
@@ -183,7 +183,7 @@
               "fontStyle": "normal",
               "fontWeight": "400",
               "src": [
-                "file:./assets/fonts/proxima-nova/proxima-nova-reg.otf"
+                "file:./assets/fonts/proxima-nova-reg.otf"
               ]
             },
             {
@@ -192,7 +192,7 @@
               "fontStyle": "italic",
               "fontWeight": "400",
               "src": [
-                "file:./assets/fonts/proxima-nova/proxima-nova-reg-it.otf"
+                "file:./assets/fonts/proxima-nova-reg-it.otf"
               ]
             },
             {
@@ -201,7 +201,7 @@
               "fontStyle": "normal",
               "fontWeight": "600",
               "src": [
-                "file:./assets/fonts/proxima-nova/proxima-nova-semibold.otf"
+                "file:./assets/fonts/proxima-nova-semibold.otf"
               ]
             },
             {
@@ -210,7 +210,7 @@
               "fontStyle": "italic",
               "fontWeight": "600",
               "src": [
-                "file:./assets/fonts/proxima-nova/proxima-nova-semibold-it.otf"
+                "file:./assets/fonts/proxima-nova-semibold-it.otf"
               ]
             },
             {
@@ -219,7 +219,7 @@
               "fontStyle": "normal",
               "fontWeight": "700",
               "src": [
-                "file:./assets/fonts/proxima-nova/proxima-nova-bold.otf"
+                "file:./assets/fonts/proxima-nova-bold.otf"
               ]
             },
             {
@@ -228,7 +228,7 @@
               "fontStyle": "italic",
               "fontWeight": "700",
               "src": [
-                "file:./assets/fonts/proxima-nova/proxima-nova-bold-it.otf"
+                "file:./assets/fonts/proxima-nova-bold-it.otf"
               ]
             },
             {
@@ -237,7 +237,7 @@
               "fontStyle": "normal",
               "fontWeight": "900",
               "src": [
-                "file:./assets/fonts/proxima-nova/proxima-nova-black.otf"
+                "file:./assets/fonts/proxima-nova-black.otf"
               ]
             },
             {
@@ -246,7 +246,7 @@
               "fontStyle": "italic",
               "fontWeight": "900",
               "src": [
-                "file:./assets/fonts/proxima-nova/proxima-nova-black-it.otf"
+                "file:./assets/fonts/proxima-nova-black-it.otf"
               ]
             }
           ],
@@ -262,7 +262,7 @@
               "fontStyle": "normal",
               "fontWeight": "400",
               "src": [
-                "file:./assets/fonts/dinpro/dinpro-regular.otf"
+                "file:./assets/fonts/dinpro-regular.otf"
               ]
             },
             {
@@ -271,7 +271,7 @@
               "fontStyle": "italic",
               "fontWeight": "400",
               "src": [
-                "file:./assets/fonts/dinpro/dinpro-regular.otf"
+                "file:./assets/fonts/dinpro-regular.otf"
               ]
             }
           ],
