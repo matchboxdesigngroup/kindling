@@ -27,6 +27,13 @@ import 'aos/dist/aos.css';
  */
 document.addEventListener('DOMContentLoaded', function () {
 
+  // Initialize AOS animation library
+  AOS.init({
+    duration: '700',
+    // mirror: true,
+    once: true,
+  });
+
   /* Any anchor link smooth scroll */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -44,10 +51,4 @@ document.addEventListener('DOMContentLoaded', function () {
   // Add role = presentation to cover block bg image
   coverBlockRolePresentation();
 
-  // Initialize AOS animation library
-  AOS.init({
-    duration: '700',
-    // mirror: true,
-    once: true,
-  });
 });
