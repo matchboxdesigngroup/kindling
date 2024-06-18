@@ -339,8 +339,7 @@
           "size": "5rem",
           "slug": "heading"
         }
-      ],
-      "fontWeight": false
+      ]
     },
     "useRootPaddingAwareAlignments": true
   },
