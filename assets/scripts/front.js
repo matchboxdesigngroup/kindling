@@ -38,6 +38,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Column classes
+  function columnClasses() {
+    const columnBlocks = document.querySelectorAll('.wp-block-columns');
+
+    columnBlocks.forEach((block) => {
+      const columns = block.querySelectorAll('.wp-block-column');
+      const columnCount = columns.length;
+
+      // Add new class based on column count
+      block.classList.add(`has-${columnCount}-columns`);
+    });
+  }
+  columnClasses();
+
   /**
   * A11y
   */
