@@ -1,11 +1,15 @@
 .editor-styles-wrapper,
 .wp-site-blocks {
 
+
+  // Set margin-block-start to 0 for <footer> and <main> elements.
+  header,
   footer,
   main {
     margin-block-start: 0;
   }
 
+  // Set margin-block-start to 0 child elements of is-layout-constrained and is-layout-flow where the child element has a background.
   .is-layout-constrained,
   .is-layout-flow {
     :where(.has-background) {
