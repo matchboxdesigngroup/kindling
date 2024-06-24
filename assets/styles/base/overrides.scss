@@ -1,31 +1,32 @@
-body {
+.editor-styles-wrapper,
+.wp-site-blocks {
 
-  .editor-styles-wrapper,
-  .wp-site-blocks {
 
-    footer,
-    main {
-      margin-block-start: 0;
-    }
-
-    .is-layout-constrained,
-    .is-layout-flow {
-      :where(.has-background) {
-        margin-block-start: 0;
-      }
-    }
+  // Set margin-block-start to 0 for <footer> and <main> elements.
+  header,
+  footer,
+  main {
+    margin-block-start: 0;
   }
 
-  // Fixes an issue with WP 6.4.3 and heading text color.
-  .editor-styles-wrapper {
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: inherit;
+  // Set margin-block-start to 0 child elements of is-layout-constrained and is-layout-flow where the child element has a background.
+  .is-layout-constrained,
+  .is-layout-flow {
+    :where(.has-background) {
+      margin-block-start: 0;
     }
+  }
+}
+
+// Fixes an issue with WP 6.4.3 and heading text color.
+.editor-styles-wrapper {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
   }
 }
