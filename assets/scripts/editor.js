@@ -26,6 +26,14 @@ import '../block-extensions/mobile-site-logo';
 import '../block-extensions/box-shadow';
 
 /**
+  * Import AOS Animation feature.
+  *
+  * Adds a select control to the Group, Column,
+  * and Cover blocks to select an animation.
+  */
+import '../block-extensions/aos-animation';
+
+/**
  * Link underline
  * Add link no underline option
  */
