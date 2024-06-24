@@ -1,0 +1,60 @@
+// Root padding aware alignment fix
+
+/// When a top-level block is set to "align full" and "inner content is content width"
+/// the inner content will get the left/right root padding applied automatically.
+///
+/// This can be overridden in the editor by adding padding to the inner content block
+/// if it is set to zero it will not have padding, hitting reset will remove that and
+/// then the theme padding will be added with this css.
+
+.wp-block-post-content.has-global-padding {
+  >.alignfull {
+    padding-left: var(--wp--style--root--padding-left);
+    padding-right: var(--wp--style--root--padding-right);
+  }
+}
+
+// Columns
+
+// Query Block columns
+.wp-block-query {
+  .wp-block-post-template.is-layout-grid {
+    &.columns-2 {
+
+      @screen md {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    &.columns-4,
+    &.columns-5,
+    &.columns-6 {
+      @apply -md:grid-cols-3
+    }
+
+    &.columns-4,
+    &.columns-5,
+    &.columns-6 {
+      @apply -sm:grid-cols-2;
+    }
+
+  }
+}
+
+// Columns
+.wp-block-columns {
+  &.is-layout-flex {
+
+    // 4 Columns goes to 2 columns at tablet
+    &.has-4-columns {
+      @apply -md:flex -md:flex-wrap gap-5;
+
+      &:not(.is-not-stacked-on-mobile)>.wp-block-column {
+        @screen -md {
+          flex-basis: calc(50% - 10px) !important;
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+}
