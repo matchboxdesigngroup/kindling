@@ -20,6 +20,8 @@
     "node": ">=16.0.0",
     "yarn": ">=1.22",
     "npm": "please-use-yarn"
+    "node": ">=20.10.0",
+    "yarn": ">=4.4.1"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"
@@ -66,4 +68,6 @@
     "test:e2e": "wp-scripts test-e2e",
     "test:unit": "wp-scripts test-unit-js"
   }
+  },
+  "packageManager": "yarn@4.4.1"
 }
