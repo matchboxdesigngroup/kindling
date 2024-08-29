@@ -48,6 +48,8 @@ module.exports = {
     front: path.resolve(process.cwd(), `${entryPath}/scripts/front.js`),
     editor: path.resolve(process.cwd(), `${entryPath}/scripts/editor.js`),
     blockVariations: path.resolve(process.cwd(), `${entryPath}/scripts/blockVariations.js`),
+    // Define block extension entries with a specific naming convention
+    'block-extensions/mobile-site-logo': path.resolve(process.cwd(), `${entryPath}/block-extensions/mobile-site-logo/index.js`),
   },
   output: {
     ...defaultConfig.output,
