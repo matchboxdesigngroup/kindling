@@ -1,3 +1,4 @@
+import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import { MediaUpload } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
