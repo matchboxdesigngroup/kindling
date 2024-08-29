@@ -1,6 +1,6 @@
-/* Site logo - mobile second logo */
-.editor-styles-wrapper .wp-block-site-logo,
-.wp-block-site-logo {
+// Desktop logo
+.editor-styles-wrapper .wp-block-site-logo .wp-block-site-logo,
+.wp-block-site-logo:not(.wp-block-site-logo--mobile):not(.block-editor-block-list__block) {
   @apply block;
 
   @media (max-width: 996px) {
@@ -8,8 +8,9 @@
   }
 }
 
-.editor-styles-wrapper .wp-block-site-logo--mobile,
-.wp-block-site-logo--mobile {
+// Mobile logo
+.editor-styles-wrapper img.wp-block-site-logo--mobile,
+.wp-block-site-logo.wp-block-site-logo--mobile {
   @apply hidden py-2;
 
   @media (max-width: 996px) {
