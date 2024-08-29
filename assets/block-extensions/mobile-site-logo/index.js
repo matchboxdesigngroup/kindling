@@ -11,6 +11,8 @@ addFilter(
     if (name !== 'core/site-logo') {
       return settings;
     }
+// Check if the extension should be enabled
+if (typeof mobileSiteLogoEnabled !== 'undefined' && mobileSiteLogoEnabled) {
 
     const { attributes, edit } = settings;
 
@@ -48,3 +50,4 @@ addFilter(
     return settings;
   }
 );
+};
