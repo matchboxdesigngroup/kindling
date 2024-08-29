@@ -21,6 +21,22 @@ add_filter('register_block_type_args', 'add_mobile_logo_attribute', 10, 2);
 
 function render_mobile_logo($block_content, $block)
 {
+  // Retrieve the custom options to check if the mobile logo feature is enabled
+  $options = get_option('kindling_options');
+  // dd($options);
+
+  // Check if the mobile logo feature is enabled in the options settings
+  if (empty($options['kindling_mobile_site_logo_checkbox'])) {
+    $block_content = str_replace(
+      'wp-block-site-logo', // Target the existing class of the logo link
+      'wp-block-site-logo wp-block-site-logo--mobile-disabled', // Add a new class when mobile logo is disabled
+      $block_content
+    );
+
+    // Return the modified block content without adding the mobile logo
+    return $block_content;
+  }
+
   // Check if the block is the Site Logo block and the mobile logo is set
   if ($block['blockName'] === 'core/site-logo' && !empty($block['attrs']['logo2'])) {
     // Get the mobile logo width or set a default if not defined
