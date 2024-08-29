@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 import { addFilter } from '@wordpress/hooks';
 import { MediaUpload } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
