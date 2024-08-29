@@ -113,6 +113,13 @@ function kindling_editor_assets()
     filemtime(get_template_directory() . '/build/scripts/blockVariations.js'), // Version for cache busting.
     true // In footer.
   );
+
+  // Site Logo block extension - Mobile logo
+  wp_enqueue_script(
+    'kindling/mobile-site-logo',
+    get_theme_file_uri('build/block-extensions/mobile-site-logo.js'),
+    array('wp-blocks', 'wp-i18n', 'wp-components', 'wp-block-editor', 'wp-hooks'),
+    filemtime(get_template_directory() . '/build/block-extensions/mobile-site-logo.js'), // Version for cache busting.
     true // In footer.
   );
 }
