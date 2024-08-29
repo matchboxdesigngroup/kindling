@@ -91,10 +91,11 @@ add_action('wp_enqueue_scripts', 'kindling_scripts');
  */
 function kindling_editor_assets()
 {
+  // There are additional dependencies that can be added. For example `wp-data` but we want to keep this as lean as possible in the base theme. You may add more if needed in your project.
   wp_enqueue_script(
     'editor-js',
     get_theme_file_uri('build/editor.js'),
-    ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor', 'wp-dom-ready', 'wp-edit-post'],
+    ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor', 'wp-dom-ready', 'wp-edit-post', 'wp-block-editor'],
     filemtime(get_template_directory() . '/build/editor.js')
   );
   wp_enqueue_style(
