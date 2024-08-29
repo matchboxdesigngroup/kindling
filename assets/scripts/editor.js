@@ -13,12 +13,6 @@ import '../blocks/publications-taxonomy-terms-list';
 import '../blocks/search-icon';
 
 /**
- * Mobile Site Logo
- * Filter the existing Site Logo block and add additional image
- */
-import '../block-extensions/mobile-site-logo';
-
-/**
   * Import box-shadow feature.
   * A series of radio buttons appear in the editor for the Group block
   * and the options add css classes to manage box-shadow styles.
