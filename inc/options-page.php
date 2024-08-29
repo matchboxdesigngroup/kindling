@@ -36,7 +36,7 @@ function kindling_settings_init()
 {
   register_setting('kindling_options_group', 'kindling_options', array(
     'type' => 'array',
-    'sanitize_callback' => 'kindling_sanitize_options', // Optional: add a sanitize callback
+    // 'sanitize_callback' => 'kindling_sanitize_options', // Optional: add a sanitize callback
   ));
 
   add_settings_section(
@@ -57,12 +57,12 @@ function kindling_settings_init()
 add_action('admin_init', 'kindling_settings_init');
 
 // Optional sanitize callback for settings
-function kindling_sanitize_options($options)
-{
-  // Sanitize checkbox value
-  $options['kindling_mobile_site_logo_checkbox'] = isset($options['kindling_mobile_site_logo_checkbox']) ? 1 : 0;
-  return $options;
-}
+// function kindling_sanitize_options($options)
+// {
+//   // Sanitize checkbox value
+//   $options['kindling_mobile_site_logo_checkbox'] = isset($options['kindling_mobile_site_logo_checkbox']) ? 1 : 0;
+//   return $options;
+// }
 
 // Section callback function
 function kindling_section_callback()
