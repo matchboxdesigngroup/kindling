@@ -9,7 +9,6 @@ import '../styles/editor.scss';
 /**
  * Custom Blocks.
  */
-import '../blocks/publications-taxonomy-terms-list';
 import '../blocks/search-icon';
 
 /**
