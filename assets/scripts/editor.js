@@ -10,6 +10,8 @@ import '../styles/editor.scss';
  * Custom Blocks.
  */
 import '../blocks/search-icon';
+import { initChildPageNavigationLink } from '../blocks/child-page-navigation-link';
+initChildPageNavigationLink();
 
 /**
  * Mobile Site Logo
