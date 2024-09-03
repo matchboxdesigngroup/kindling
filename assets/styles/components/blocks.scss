@@ -20,6 +20,7 @@ $colors: (
  */
 
 .wp-block-button {
+
   /* Default button */
   .wp-element-button {
     @apply btn-primary;
@@ -79,6 +80,7 @@ ul.is-style-default {
   }
 
   &:hover {
+
     .wp-block-query-pagination-next-arrow,
     .wp-block-query-pagination-previous-arrow {
       &::after {
@@ -104,7 +106,7 @@ ul.is-style-default {
   @apply flex justify-center gap-3 py-10 md:py-20;
 }
 
-.wp-block-query-pagination > .wp-block-query-pagination-numbers {
+.wp-block-query-pagination>.wp-block-query-pagination-numbers {
   @apply m-0;
 }
 
@@ -124,8 +126,8 @@ ul.is-style-default {
   }
 }
 
-.wp-block-query-pagination > .wp-block-query-pagination-next,
-.wp-block-query-pagination > .wp-block-query-pagination-previous {
+.wp-block-query-pagination>.wp-block-query-pagination-next,
+.wp-block-query-pagination>.wp-block-query-pagination-previous {
   @apply m-0;
 }
 
@@ -141,7 +143,7 @@ ul.is-style-default {
   &::after {
     @apply bg-medium-grey content-[''] h-2.5 w-2.5 absolute left-0 top-0 transition;
     display: block;
-    visibility:  visible;
+    visibility: visible;
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: 10px 10px;
@@ -170,7 +172,8 @@ ul.is-style-default {
   a {
     @apply pt-[48px] md:pt-0 text-base sm:text-xl md:text-2xl no-underline text-dark-blue leading-tight block z-[2];
 
-    @screen -sm {      @apply h-[48px] w-[48px];
+    @screen -sm {
+      @apply h-[48px] w-[48px];
     }
 
     &:hover {
@@ -239,7 +242,8 @@ ul.is-style-default {
         @apply content-[''] absolute h-[48px] w-[48px] bg-dark-blue visible block top-1/2 -translate-y-1/2;
 
         mask-image: url(../images/arrow-right-circle.svg);
-        mask-repeat: no-repeat;        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-position: center;
         mask-size: 48px 48px;
       }
     }
@@ -247,13 +251,15 @@ ul.is-style-default {
     a {
       // Next link text right aligned
       @apply text-right mr-0 md:pr-20;
+
       // Next link label right aligned
       .post-navigation-link__label {
         @apply text-right;
 
         // Next link label prefix text
         &::before {
-          @apply content-['Next'] relative block;        }
+          @apply content-['Next'] relative block;
+        }
       }
     }
   }
@@ -261,7 +267,7 @@ ul.is-style-default {
 
 /* Editorskit linked blocks. */
 .ek-linked-block {
-  > div {
+  >div {
     // Global link styles: Reset shadow and translate.
     @apply transition shadow-none translate-y-0;
   }
@@ -269,14 +275,15 @@ ul.is-style-default {
   // .ek-linked-block-over class added to wrapping container by JS on mouseenter.
   &.ek-linked-block-over {
 
-    > div {
+    >div {
       // Global link styles: Add shadow and move up 4px.
       @apply bg-grey shadow-lg -translate-y-1;
     }
 
     a.editorskit-block-link {
       // Reset margin-block-start added by Gutenberg layout.
-      @apply mt-0;    }
+      @apply mt-0;
+    }
   }
 }
 
