@@ -1,5 +1,11 @@
 .site-header {
-  @media screen and (min-width: 861px) {
+
+  // 961px and up
+  @media screen and (min-width: 961px) {
+
+    /* Default nav styles */
+
+    // Link styles
     .wp-block-navigation-link a {
       &:hover {
         @apply text-dark-blue;
