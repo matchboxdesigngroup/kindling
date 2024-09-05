@@ -37,11 +37,12 @@
     }
   }
 
-  @media screen and (max-width: 1250px) {
+  // Desktop - 960px and down
+  @media screen and (max-width: 960px) {
     .wp-block-navigation__responsive-container-open {
       @apply w-10 h-10 bg-white rounded;
 
-      /* hamburger button show at 1250 */
+      /* hamburger button show at 960 */
       display: block !important;
 
       svg {
