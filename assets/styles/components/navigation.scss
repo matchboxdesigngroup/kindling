@@ -107,7 +107,7 @@
       @apply bg-white;
 
       ul.wp-block-navigation__container {
-        @apply items-center w-auto mx-auto gap-6;
+        @apply w-full mx-auto gap-0;
 
         li.wp-block-navigation-item {
           @apply items-center w-full;
