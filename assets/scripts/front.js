@@ -3,6 +3,8 @@
  */
 import '../styles/front.scss';
 
+// Slider block
+import sliderSwiperInit from '../blocks/slider/swiper-init';
 
 // A11y
 import coverBlockRolePresentation from './a11y/cover-block/presentation-role';
@@ -53,5 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
   */
   // Add role = presentation to cover block bg image
   coverBlockRolePresentation();
+
+  // Blocks
+  sliderSwiperInit(); // Slider block
 
 });

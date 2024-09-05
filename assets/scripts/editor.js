@@ -50,6 +50,15 @@ import '../block-extensions/safe-svg';
 import '../block-extensions/block-toolbar/block-links';
 
 /**
+ * Custom Theme Blocks.
+ */
+
+// Slider block
+import '../blocks/slider';
+// Individiual slide block
+import '../blocks/slide';
+
+/**
  * Unregister two block styles for the 'core/button' block type when the DOM is ready.
  *
  * @name domReady
