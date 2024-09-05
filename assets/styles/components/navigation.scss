@@ -59,6 +59,21 @@
       }
     }
 
+    // Linked text
+    a.wp-block-navigation-item__content {
+      @apply uppercase text-base font-medium w-full;
+
+      padding-top: 12px !important;
+      padding-right: 20px !important;
+      padding-bottom: 12px !important;
+      padding-left: 20px !important;
+    }
+
+    // Submenu text
+    .wp-block-navigation__submenu-container a {
+      @apply capitalize
+    }
+
     .wp-block-navigation__responsive-container:not(.is-menu-open.has-modal-open) {
       /* full menu hide at 1250 */
       display: none !important;
