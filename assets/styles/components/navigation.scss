@@ -50,8 +50,9 @@
       }
     }
 
+    // Close button when mobile menu is open
     .wp-block-navigation__responsive-container-close {
-      @apply top-2;
+      @apply top-3 right-3;
 
       svg {
         @apply fill-black;
