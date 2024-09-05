@@ -100,8 +100,6 @@
 
     // full menu hide at 960
     .wp-block-navigation__responsive-container:not(.is-menu-open.has-modal-open) {
-      /* full menu hide at 1250 */
-      display: none !important;
       @apply hidden;
     }
 
