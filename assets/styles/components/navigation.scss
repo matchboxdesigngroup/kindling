@@ -8,12 +8,12 @@
     // Link styles
     .wp-block-navigation-link a {
       &:hover {
-        @apply text-dark-blue;
+        @apply text-black;
       }
 
       a:where(:not(.wp-element-button)) {
         &:hover {
-          @apply text-dark-blue;
+          @apply text-grey;
         }
       }
     }
@@ -21,13 +21,13 @@
     .wp-block-navigation__responsive-container-content {
       a.wp-block-navigation-item__content {
         &:hover {
-          @apply text-dark-blue;
+          @apply text-black;
         }
       }
 
       .wp-block-navigation-submenu:hover {
         .wp-block-navigation__submenu-icon svg {
-          @apply stroke-dark-grey;
+          @apply stroke-black;
         }
       }
 
@@ -45,7 +45,7 @@
       display: block !important;
 
       svg {
-        @apply mx-auto fill-dark-grey;
+        @apply mx-auto fill-black;
       }
     }
 
@@ -53,7 +53,7 @@
       @apply top-2;
 
       svg {
-        @apply fill-dark-grey;
+        @apply fill-black;
       }
     }
 
