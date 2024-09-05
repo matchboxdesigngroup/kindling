@@ -130,6 +130,71 @@
       }
     }
 
+    /* Mobile menu container animation */
+
+    .wp-block-navigation .has-child .wp-block-navigation__submenu-container {
+      // max-height: 0;
+      overflow: hidden;
+      transition: height 0.5s ease-in-out, opacity 0.5s linear, visibility 0.5s linear;
+    }
+
+    .wp-block-navigation__responsive-container.is-menu-open {
+      animation: slide-in-right .4s ease-out !important; // !important: Override core animation
+
+      .wp-block-navigation__responsive-container-content {
+        padding-top: 48px;
+
+        ul.wp-block-navigation__container {
+
+          li.wp-block-navigation-item {
+
+            // Menu item with submenu - .wp-block-navigation-submenu
+            &.wp-block-navigation-submenu {
+
+              .wp-block-navigation__submenu-icon {
+                @apply absolute right-5 top-6;
+                display: inline-block; // reenable the dropdown arrow
+
+                // &[aria-expanded="false"] {
+                //   // it is not open
+                // }
+
+              }
+            }
+
+            // Parent, top level li item dropdown not open (default)
+            &:not(.is-open) {
+
+              // Submenu
+              ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
+                height: 0;
+                overflow: hidden;
+                transition: height .2s
+              }
+            }
+
+            // Dropdown arrow clicked
+            &.is-open {
+
+              // Submenu
+              ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
+                height: auto
+              }
+            }
+          }
+        }
+
+        // Submenu width
+        .has-child .wp-block-navigation__submenu-container {
+          @apply w-full;
+
+          .wp-block-navigation-item {
+            @apply border-none;
+          }
+        }
+      }
+    }
+
     body:not(.admin-bar) {
       .wp-block-navigation__responsive-close {
         @apply pt-2;
