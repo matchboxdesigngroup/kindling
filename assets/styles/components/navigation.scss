@@ -120,7 +120,7 @@
           }
 
           .wp-block-navigation__submenu-container {
-            @apply pt-2;
+            @apply pt-0 overflow-visible;
 
             a {
               @apply text-base font-medium;
