@@ -97,9 +97,12 @@
       transform: translateY(-50%);
       /* Adjust based on actual button size for perfect centering */
     }
+
+    // full menu hide at 960
     .wp-block-navigation__responsive-container:not(.is-menu-open.has-modal-open) {
       /* full menu hide at 1250 */
       display: none !important;
+      @apply hidden;
     }
 
     .wp-block-navigation__responsive-container.has-modal-open {
