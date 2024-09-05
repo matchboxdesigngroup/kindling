@@ -105,7 +105,6 @@
 
     .wp-block-navigation__responsive-container.has-modal-open {
       @apply bg-white;
-      background-color: theme('colors.light-grey');
 
       ul.wp-block-navigation__container {
         @apply items-center w-auto mx-auto gap-6;
