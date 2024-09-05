@@ -3,17 +3,6 @@
  */
 import '../styles/front.scss';
 
-/**
- * Swiper bundle with all modules installed
- */
-// TODO only import what we need
-import Swiper from 'swiper/bundle';
-
-/**
- * Swiper CSS bundle
- */
-// TODO only import what we need
-import 'swiper/css/bundle';
 
 // A11y
 import coverBlockRolePresentation from './a11y/cover-block/presentation-role';
