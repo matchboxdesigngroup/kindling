@@ -109,6 +109,8 @@
       ul.wp-block-navigation__container {
         @apply w-full mx-auto gap-0;
 
+        border-top: 1px solid #e2e8f0;
+
         li.wp-block-navigation-item {
           @apply items-center w-full;
 
