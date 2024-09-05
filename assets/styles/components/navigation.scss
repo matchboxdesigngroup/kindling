@@ -111,11 +111,12 @@
 
         border-top: 1px solid #e2e8f0;
 
+        // Menu items.
         li.wp-block-navigation-item {
-          @apply items-center w-full;
+          @apply w-full p-0;
 
-          a.wp-block-navigation-item__content {
-            @apply text-dark-grey uppercase text-xl font-semibold;
+          &:not(:last-of-type) {
+            border-bottom: 1px solid #e2e8f0;
           }
 
           .wp-block-navigation__submenu-container {
