@@ -74,6 +74,11 @@
       @apply capitalize
     }
 
+    // Parent link with submenu
+    .wp-block-navigation-item.has-child {
+      position: relative;
+      /* Ensure that the CSS positioning context is set */
+    }
     .wp-block-navigation__responsive-container:not(.is-menu-open.has-modal-open) {
       /* full menu hide at 1250 */
       display: none !important;
