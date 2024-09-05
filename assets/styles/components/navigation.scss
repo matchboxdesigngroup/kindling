@@ -86,6 +86,17 @@
       display: inline-block;
       /* Ensure the link doesn't collapse and respects padding */
     }
+
+    .wp-block-navigation-item.has-child>a+button {
+      position: absolute;
+      /* Position the toggle button absolutely within the 'li' */
+      right: 0;
+      /* Align to the right */
+      top: 50%;
+      /* Center vertically */
+      transform: translateY(-50%);
+      /* Adjust based on actual button size for perfect centering */
+    }
     .wp-block-navigation__responsive-container:not(.is-menu-open.has-modal-open) {
       /* full menu hide at 1250 */
       display: none !important;
