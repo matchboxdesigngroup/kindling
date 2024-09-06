@@ -23,6 +23,16 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 /**
+ * Better Mobile Menu
+ */
+import { initializeMenu } from './better-mobile-menu/better-mobile-menu';
+
+jQuery(document).ready(function ($) {
+  // Initialize the better mobile menu feature
+  initializeMenu();
+});
+
+/**
  * Frontend scripts
  */
 document.addEventListener('DOMContentLoaded', function () {
