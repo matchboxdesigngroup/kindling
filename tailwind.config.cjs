@@ -1,6 +1,13 @@
 // https://tailwindcss.com/docs/configuration
 module.exports = {
-  content: ['./index.php', './**/*.html', './**/*.php', './assets/**/*.{php,vue,js}'],
+  content: [
+    './index.php',
+    './assets/**/*.{php,html,js}',
+    './inc/**/*.php',
+    './templates/**/*.php',
+    './parts/**/*.php',
+    './patterns/**/*.php',
+  ],
   theme: {
     colors: {
       /* if changes are made - update variables in blocks.scss and theme.json  */

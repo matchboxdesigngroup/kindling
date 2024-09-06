@@ -17,30 +17,6 @@ module.exports = {
     ...defaultConfig.module,
     rules: [
       ...defaultConfig.module.rules,
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 65,
-              },
-              pngquant: {
-                enabled: false,
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              webp: {
-                quality: 75,
-              },
-            },
-          },
-        ],
-      },
     ],
   },
   entry: {
