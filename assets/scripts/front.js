@@ -3,17 +3,8 @@
  */
 import '../styles/front.scss';
 
-/**
- * Swiper bundle with all modules installed
- */
-// TODO only import what we need
-import Swiper from 'swiper/bundle';
-
-/**
- * Swiper CSS bundle
- */
-// TODO only import what we need
-import 'swiper/css/bundle';
+// Slider block
+import sliderSwiperInit from '../blocks/slider/swiper-init';
 
 // A11y
 import coverBlockRolePresentation from './a11y/cover-block/presentation-role';
@@ -74,5 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
   */
   // Add role = presentation to cover block bg image
   coverBlockRolePresentation();
+
+  // Blocks
+  sliderSwiperInit(); // Slider block
 
 });
