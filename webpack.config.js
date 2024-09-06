@@ -21,14 +21,26 @@ module.exports = {
   },
   entry: {
     ...defaultConfig.entry,
-    front: path.resolve(process.cwd(), `${entryPath}/scripts`, 'front.js'),
-    editor: path.resolve(process.cwd(), `${entryPath}/scripts`, 'editor.js'),
-    blockVariations: path.resolve(process.cwd(), `${entryPath}/scripts`, 'blockVariations.js')
+    front: path.resolve(process.cwd(), `${entryPath}/scripts/front.js`),
+    editor: path.resolve(process.cwd(), `${entryPath}/scripts/editor.js`),
+    blockVariations: path.resolve(process.cwd(), `${entryPath}/scripts/blockVariations.js`),
+    // Define block extension entries with a specific naming convention
+    'block-extensions/mobile-site-logo': path.resolve(process.cwd(), `${entryPath}/block-extensions/mobile-site-logo/index.js`),
   },
   output: {
     ...defaultConfig.output,
-    // [name] is an alias for the entry point
-    filename: '[name].js',
+    // Dynamically set the filename and path based on the entry name
+    filename: (pathData) => {
+      const name = pathData.chunk.name;
+
+      // Send files to the block-extensions folder if they start with 'block-extensions/'
+      if (name.startsWith('block-extensions/')) {
+        return `${name}.js`;
+      }
+
+      // Default to placing in the scripts directory
+      return `scripts/${name}.js`;
+    },
     path: path.resolve(process.cwd(), outputPath),
   },
   resolve: {
