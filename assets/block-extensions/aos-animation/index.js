@@ -22,7 +22,8 @@ const allowedBlocks = [
 
 // Custom attributes to add to blocks
 const addAttributes = (settings) => {
-  if (allowedBlocks.includes(settings.name)) {
+  // Ensure the settings are valid and match allowed blocks
+  if (settings && allowedBlocks.includes(settings.name)) {
     settings.attributes = {
       ...settings.attributes,
       animation: {
