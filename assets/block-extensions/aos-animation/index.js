@@ -1,7 +1,9 @@
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { PanelBody, SelectControl, RangeControl, ToggleControl } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
+import { Fragment, useEffect } from '@wordpress/element';
+import { group as groupIcon } from '@wordpress/icons';
 
 const allowedBlocks = ['core/group', 'core/column', 'core/cover'];
 
@@ -14,6 +16,22 @@ const addAttributes = (settings) => {
         type: 'string',
         default: '',
       },
+      aosDuration: {
+        type: 'number',
+        default: 1000,
+      },
+      aosDelay: {
+        type: 'number',
+        default: 0,
+      },
+      aosOnce: {
+        type: 'boolean',
+        default: false,
+      },
+      aosEasing: {
+        type: 'string',
+        default: 'ease',
+      },
     };
   }
 
@@ -24,14 +42,15 @@ const addAttributes = (settings) => {
 const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
   return (props) => {
     if (allowedBlocks.includes(props.name)) {
+      const { attributes, setAttributes } = props;
       return (
         <>
           <BlockEdit {...props} />
           <InspectorControls>
-            <PanelBody title="Animation" initialOpen={true}>
+          <PanelBody title="Animation Settings" initialOpen={true}>
               <SelectControl
                 label="Select Animation"
-                value={props.attributes.animation}
+                value={attributes.animation}
                 options={[
                   { label: 'None', value: '' },
                   { label: 'Fade', value: 'fade' },
@@ -64,6 +83,37 @@ const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
                 ]}
                 onChange={(animation) => props.setAttributes({ animation })}
               />
+              <SelectControl
+                label="Easing"
+                value={attributes.aosEasing}
+                options={[
+                  { label: 'Ease', value: 'ease' },
+                  { label: 'Ease In', value: 'ease-in' },
+                  { label: 'Ease Out', value: 'ease-out' },
+                  { label: 'Ease In Out', value: 'ease-in-out' },
+                  { label: 'Linear', value: 'linear' },
+                ]}
+                onChange={(aosEasing) => setAttributes({ aosEasing })}
+              />
+              <RangeControl
+                label="Duration (ms)"
+                value={attributes.aosDuration}
+                onChange={(aosDuration) => setAttributes({ aosDuration })}
+                min={0}
+                max={5000}
+              />
+              <RangeControl
+                label="Delay (ms)"
+                value={attributes.aosDelay}
+                onChange={(aosDelay) => setAttributes({ aosDelay })}
+                min={0}
+                max={5000}
+              />
+              <ToggleControl
+                label="Animate Once"
+                checked={attributes.aosOnce}
+                onChange={(aosOnce) => setAttributes({ aosOnce })}
+              />
             </PanelBody>
           </InspectorControls>
         </>
@@ -75,30 +125,58 @@ const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
 }, 'withInspectorControl');
 
 // Add a filter to inject the 'data-aos' attribute during the save process
+// const withListViewAnimationIndicator = createHigherOrderComponent((BlockListBlock) => {
+//   return (props) => {
+//     const { attributes, clientId } = props;
+//     const { animation } = attributes;
+
+//     useEffect(() => {
+//       // Find the corresponding List View item using the clientId
+//       const listViewItem = document.querySelector(`.block-editor-list-view-leaf[data-block="${clientId}"]`);
+//       console.log(listViewItem);
+//       if (listViewItem) {
+
+//         // If animation is applied, add a class to the List View item
+//         if (animation) {
+//           listViewItem.classList.add('has-animation');
+//         } else {
+//           // Remove the class if no animation is set
+//           listViewItem.classList.remove('has-animation');
+//         }
+//       }
+//     }, [clientId, animation]);
+
+//     return <BlockListBlock {...props} />;
+//   };
+// }, 'withListViewAnimationIndicator');
+
+// Add save data attribute
 const addSaveDataAttribute = (extraProps, blockType, attributes) => {
-  if (allowedBlocks.includes(blockType.name) && attributes.animation) {
-    extraProps['data-aos'] = attributes.animation;
+  if (allowedBlocks.includes(blockType.name)) {
+    if (attributes.animation) {
+      extraProps['data-aos'] = attributes.animation;
+    }
+    if (attributes.aosDuration) {
+      extraProps['data-aos-duration'] = attributes.aosDuration;
+    }
+    if (attributes.aosDelay) {
+      extraProps['data-aos-delay'] = attributes.aosDelay;
+    }
+    if (attributes.aosOnce) {
+      extraProps['data-aos-once'] = attributes.aosOnce ? 'true' : 'false';
+    }
+    if (attributes.aosEasing) {
+      extraProps['data-aos-easing'] = attributes.aosEasing;
+    }
   }
 
   return extraProps;
 };
 
-// Hook into the block register to add your attributes and extend the edit component
-addFilter(
-  'blocks.registerBlockType',
-  'kindling/add-animation-attribute',
-  addAttributes
-);
+// Register filters
+addFilter('blocks.registerBlockType', 'kindling/add-animation-attribute', addAttributes);
+addFilter('editor.BlockEdit', 'kindling/with-inspector-control', withInspectorControls);
+// addFilter('editor.BlockListBlock', 'kindling/with-list-view-animation-indicator', withListViewAnimationIndicator);
+addFilter('blocks.getSaveContent.extraProps', 'kindling/add-save-data-attribute', addSaveDataAttribute);
 
-addFilter(
-  'editor.BlockEdit',
-  'kindling/with-inspector-control',
-  withInspectorControls
-);
 
-// Hook into the 'getSaveContent.extraProps' filter to add the 'data-aos' attribute to the save output
-addFilter(
-  'blocks.getSaveContent.extraProps',
-  'kindling/add-save-data-attribute',
-  addSaveDataAttribute
-);
