@@ -48,11 +48,9 @@ const addAttributes = (settings) => {
       },
     };
   }
-
   return settings;
 };
 
-// Extend the block edit component to include your custom settings
 const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
   return (props) => {
     if (allowedBlocks.includes(props.name)) {
@@ -61,7 +59,7 @@ const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
         <>
           <BlockEdit {...props} />
           <InspectorControls>
-          <PanelBody title="Animation Settings" initialOpen={true}>
+            <PanelBody title="Animation Settings" initialOpen={true}>
               <SelectControl
                 label="Select Animation"
                 value={attributes.animation}
@@ -138,33 +136,6 @@ const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
   };
 }, 'withInspectorControl');
 
-// Add a filter to inject the 'data-aos' attribute during the save process
-// const withListViewAnimationIndicator = createHigherOrderComponent((BlockListBlock) => {
-//   return (props) => {
-//     const { attributes, clientId } = props;
-//     const { animation } = attributes;
-
-//     useEffect(() => {
-//       // Find the corresponding List View item using the clientId
-//       const listViewItem = document.querySelector(`.block-editor-list-view-leaf[data-block="${clientId}"]`);
-//       console.log(listViewItem);
-//       if (listViewItem) {
-
-//         // If animation is applied, add a class to the List View item
-//         if (animation) {
-//           listViewItem.classList.add('has-animation');
-//         } else {
-//           // Remove the class if no animation is set
-//           listViewItem.classList.remove('has-animation');
-//         }
-//       }
-//     }, [clientId, animation]);
-
-//     return <BlockListBlock {...props} />;
-//   };
-// }, 'withListViewAnimationIndicator');
-
-// Add save data attribute
 // Add custom data attributes to the block's save element only when necessary
 const addSaveDataAttribute = (extraProps, blockType, attributes) => {
   if (allowedBlocks.includes(blockType.name)) {
