@@ -38,10 +38,6 @@ const addAttributes = (settings) => {
         type: 'number',
         default: 0,
       },
-      aosOnce: {
-        type: 'boolean',
-        default: false,
-      },
       aosEasing: {
         type: 'string',
         default: 'ease',
@@ -122,11 +118,6 @@ const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
                 min={0}
                 max={5000}
               />
-              <ToggleControl
-                label="Animate Once"
-                checked={attributes.aosOnce}
-                onChange={(aosOnce) => setAttributes({ aosOnce })}
-              />
             </PanelBody>
           </InspectorControls>
         </>
@@ -151,9 +142,6 @@ const addSaveDataAttribute = (extraProps, blockType, attributes) => {
       }
       if (attributes.aosDelay) {
         extraProps['data-aos-delay'] = attributes.aosDelay;
-      }
-      if (attributes.aosOnce) {
-        extraProps['data-aos-once'] = attributes.aosOnce ? 'true' : 'false';
       }
       if (attributes.aosEasing) {
         extraProps['data-aos-easing'] = attributes.aosEasing;
