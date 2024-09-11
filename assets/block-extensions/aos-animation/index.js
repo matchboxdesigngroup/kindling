@@ -20,7 +20,7 @@ const allowedBlocks = [
   'core/post-template'
 ];
 
-// Custom attribute you want to add
+// Custom attributes to add to blocks
 const addAttributes = (settings) => {
   if (allowedBlocks.includes(settings.name)) {
     settings.attributes = {
