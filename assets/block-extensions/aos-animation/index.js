@@ -2,8 +2,6 @@ import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { PanelBody, SelectControl, RangeControl, ToggleControl } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
-import { Fragment, useEffect } from '@wordpress/element';
-import { group as groupIcon } from '@wordpress/icons';
 
 const allowedBlocks = ['core/group', 'core/column', 'core/cover'];
 
