@@ -3,7 +3,22 @@ import { createHigherOrderComponent } from '@wordpress/compose';
 import { PanelBody, SelectControl, RangeControl, ToggleControl } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 
-const allowedBlocks = ['core/group', 'core/column', 'core/cover'];
+// Specify allowed blocks to which the attributes should be added
+const allowedBlocks = [
+  'core/group',
+  'core/column',
+  'core/cover',
+  'core/paragraph',
+  'core/heading',
+  'core/buttons',
+  'core/image',
+  'core/post-date',
+  'core/post-excerpt',
+  'core/post-title',
+  'core/post-featured-image',
+  'core/post-content',
+  'core/post-template'
+];
 
 // Custom attribute you want to add
 const addAttributes = (settings) => {
