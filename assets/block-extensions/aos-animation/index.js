@@ -165,6 +165,7 @@ const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
 // }, 'withListViewAnimationIndicator');
 
 // Add save data attribute
+// Add custom data attributes to the block's save element only when necessary
 const addSaveDataAttribute = (extraProps, blockType, attributes) => {
   if (allowedBlocks.includes(blockType.name)) {
     if (attributes.animation) {
@@ -190,7 +191,4 @@ const addSaveDataAttribute = (extraProps, blockType, attributes) => {
 // Register filters
 addFilter('blocks.registerBlockType', 'kindling/add-animation-attribute', addAttributes);
 addFilter('editor.BlockEdit', 'kindling/with-inspector-control', withInspectorControls);
-// addFilter('editor.BlockListBlock', 'kindling/with-list-view-animation-indicator', withListViewAnimationIndicator);
 addFilter('blocks.getSaveContent.extraProps', 'kindling/add-save-data-attribute', addSaveDataAttribute);
-
-
