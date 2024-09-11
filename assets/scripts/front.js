@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize AOS animation library
   AOS.init({
     duration: '700',
-    // mirror: true,
     once: true,
   });
 
