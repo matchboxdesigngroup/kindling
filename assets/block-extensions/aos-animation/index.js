@@ -51,6 +51,7 @@ const addAttributes = (settings) => {
   return settings;
 };
 
+// Extend the block edit component to include custom settings
 const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
   return (props) => {
     if (allowedBlocks.includes(props.name)) {
@@ -93,7 +94,7 @@ const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
                   { label: 'Zoom Out Left', value: 'zoom-out-left' },
                   { label: 'Zoom Out Right', value: 'zoom-out-right' }
                 ]}
-                onChange={(animation) => props.setAttributes({ animation })}
+                onChange={(animation) => setAttributes({ animation })}
               />
               <SelectControl
                 label="Easing"
@@ -134,25 +135,29 @@ const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
 
     return <BlockEdit {...props} />;
   };
-}, 'withInspectorControl');
+}, 'withInspectorControls');
 
 // Add custom data attributes to the block's save element only when necessary
 const addSaveDataAttribute = (extraProps, blockType, attributes) => {
-  if (allowedBlocks.includes(blockType.name)) {
+  // Check if the block type is allowed and attributes exist
+  if (allowedBlocks.includes(blockType.name) && attributes) {
+    // Add animation attributes only if 'animation' is set (not empty)
     if (attributes.animation) {
       extraProps['data-aos'] = attributes.animation;
-    }
-    if (attributes.aosDuration) {
-      extraProps['data-aos-duration'] = attributes.aosDuration;
-    }
-    if (attributes.aosDelay) {
-      extraProps['data-aos-delay'] = attributes.aosDelay;
-    }
-    if (attributes.aosOnce) {
-      extraProps['data-aos-once'] = attributes.aosOnce ? 'true' : 'false';
-    }
-    if (attributes.aosEasing) {
-      extraProps['data-aos-easing'] = attributes.aosEasing;
+
+      // Only add other AOS attributes if 'animation' is not empty
+      if (attributes.aosDuration) {
+        extraProps['data-aos-duration'] = attributes.aosDuration;
+      }
+      if (attributes.aosDelay) {
+        extraProps['data-aos-delay'] = attributes.aosDelay;
+      }
+      if (attributes.aosOnce) {
+        extraProps['data-aos-once'] = attributes.aosOnce ? 'true' : 'false';
+      }
+      if (attributes.aosEasing) {
+        extraProps['data-aos-easing'] = attributes.aosEasing;
+      }
     }
   }
 
