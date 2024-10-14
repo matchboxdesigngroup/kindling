@@ -44,6 +44,12 @@ import '../block-extensions/safe-svg';
 import '../block-extensions/block-toolbar/block-links';
 
 /**
+ * Video Cover Block Extension.
+ * Adds video URL field to the cover block.
+ */
+import '../block-extensions/video-cover';
+
+/**
  * Custom Theme Blocks.
  */
 
