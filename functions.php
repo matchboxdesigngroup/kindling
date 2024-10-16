@@ -94,9 +94,9 @@ function kindling_editor_assets()
   // There are additional dependencies that can be added. For example `wp-data` but we want to keep this as lean as possible in the base theme. You may add more if needed in your project.
   wp_enqueue_script(
     'editor-js',
-    get_theme_file_uri('build/scripts/editor.js'),
+    get_theme_file_uri('build/editor.js'),
     ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor', 'wp-dom-ready', 'wp-edit-post', 'wp-block-editor'],
-    filemtime(get_template_directory() . '/build/scripts/editor.js')
+    filemtime(get_template_directory() . '/build/editor.js')
   );
   wp_enqueue_style(
     'editor',
@@ -108,9 +108,9 @@ function kindling_editor_assets()
   // Block Variations
   wp_enqueue_script(
     'kindling-block-variations',
-    get_theme_file_uri('build/scripts/blockVariations.js'),
+    get_theme_file_uri('build/blockVariations.js'),
     array('wp-blocks', 'wp-i18n', 'wp-dom-ready'),
-    filemtime(get_template_directory() . '/build/scripts/blockVariations.js'), // Version for cache busting.
+    filemtime(get_template_directory() . '/build/blockVariations.js'), // Version for cache busting.
     true // In footer.
   );
 
