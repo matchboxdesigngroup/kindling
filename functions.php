@@ -156,3 +156,5 @@ require_once get_theme_file_path('inc/google-analytics.php');
 // Theme Options Page
 require_once get_theme_file_path('inc/options-page.php');
 
+// Shortcodes
+require_once get_theme_file_path('inc/shortcodes.php');
