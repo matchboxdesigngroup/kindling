@@ -75,9 +75,9 @@ function kindling_scripts()
 {
   wp_enqueue_script(
     'front',
-    get_theme_file_uri('build/scripts/front.js'),
+    get_theme_file_uri('build/front.js'),
     [],
-    filemtime(get_template_directory() . '/build/scripts/front.js')
+    filemtime(get_template_directory() . '/build/front.js')
   );
 }
 add_action('wp_enqueue_scripts', 'kindling_scripts');
