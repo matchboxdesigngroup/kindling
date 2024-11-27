@@ -159,7 +159,5 @@ require_once get_theme_file_path('inc/google-analytics.php');
 // Theme Options Page
 require_once get_theme_file_path('inc/options-page.php');
 
-// WooCommerce setup.
-if (class_exists('WooCommerce')) {
-  require_once get_theme_file_path('inc/woocommerce.php');
-}
+// Shortcodes
+require_once get_theme_file_path('inc/shortcodes.php');
