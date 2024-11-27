@@ -141,6 +141,9 @@ require_once get_theme_file_path('inc/block-styles.php');
 // Block variations.
 //require_once get_theme_file_path( 'inc/register-block-variations.php' );
 
+//Block Extensions
+require_once get_template_directory() . '/assets/block-extensions/block-extensions.php';
+
 // Block patterns.
 require_once get_theme_file_path('inc/block-patterns.php');
 
