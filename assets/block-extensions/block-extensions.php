@@ -13,4 +13,7 @@ function kindling_extend_core_cover_block() {
     wp_enqueue_script( 'kindling-video-cover-extend' );
 }
 add_action( 'enqueue_block_editor_assets', 'kindling_extend_core_cover_block' );
+
+require_once get_template_directory() . '/assets/block-extensions/video-cover/index.php';
+
 ?>

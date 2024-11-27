@@ -1,34 +1,46 @@
+.wp-block-cover {
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+}
+
 .wp-block-cover__video-background {
-  width: 300%;
   height: 300%;
+  left: 0;
   object-fit: cover;
   position: absolute;
   top: -100%;
-  left: 0;
+  width: 300%;
+  z-index: 0;
+}
+
+.wp-block-cover__inner-container {
+  position: relative;
+  z-index: 1;
 }
 
 @media screen and (min-width: 375px) {
   .wp-block-cover__video-background {
+    height: 260%;
     top: -80%;
     width: 260%;
-    height: 260%;
   }
 }
 
 @media screen and (min-width: 425px) {
   .wp-block-cover__video-background {
+    height: 250%;
     top: -75%;
     width: 250%;
-    height: 250%;
   }
 }
 
 @media screen and (min-width: 768px) {
   .wp-block-cover__video-background {
-    top: -25%;
-    left: -10%;
-    width: 150%;
     height: 150%;
+    left: -10%;
+    top: -25%;
+    width: 150%;
   }
 }
 
@@ -40,16 +52,16 @@
 
 @media screen and (min-width: 1440px) {
   .wp-block-cover__video-background {
+    height: 275%;
     left: -88%;
     width: 275%;
-    height: 275%;
   }
 }
 
 @media screen and (min-width: 2560px) {
   .wp-block-cover__video-background {
+    height: 350%;
     left: -125%;
     width: 350%;
-    height: 350%;
   }
 }

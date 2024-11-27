@@ -17,48 +17,44 @@ function kindling_register_cover_block_attributes()
 }
 add_action('init', 'kindling_register_cover_block_attributes');
 
-function kindling_modify_cover_block_output($block_content, $block)
-{
-  // Check if this is a 'core/cover' block
+function kindling_modify_cover_block_output($block_content, $block) {
+  if (!is_array($block) || !isset($block['blockName'])) {
+      return $block_content;
+  }
+
   if ($block['blockName'] !== 'core/cover') {
-    return $block_content;
+      return $block_content;
   }
 
-  // Get the attributes
-  $attributes = $block['attrs'];
+  $attributes = $block['attrs'] ?? [];
 
-  // Check if 'videoUrl' attribute is set and not empty
-  if (empty($attributes['videoUrl'])) {
-    return $block_content;
-  }
+  if (!empty($attributes['videoUrl'])) {
+      $video_url = esc_url_raw($attributes['videoUrl']);
+      $youtube_id = kindling_get_youtube_id($video_url);
 
-  // Extract the YouTube video ID
-  $video_url = esc_url_raw($attributes['videoUrl']);
-  $youtube_id = kindling_get_youtube_id($video_url);
+      if ($youtube_id) {
+          // Construct the YouTube embed URL.
+          $embed_url = 'https://www.youtube.com/embed/' . $youtube_id . '?autoplay=1&loop=1&mute=1&playlist=' . $youtube_id . '&controls=0&showinfo=0&modestbranding=1&rel=0';
 
-  if ($youtube_id) {
-    // Construct the YouTube embed URL
-    $embed_url = 'https://www.youtube.com/embed/' . $youtube_id . '?autoplay=1&loop=1&mute=1&playlist=' . $youtube_id . '&controls=0&showinfo=0&modestbranding=1&rel=0';
+          // Create the iframe.
+          $video_element = sprintf(
+              '<iframe src="%s" frameborder="0" allow="autoplay; loop; fullscreen" allowfullscreen class="wp-block-cover__video-background" style="pointer-events:none;"></iframe>',
+              esc_url($embed_url)
+          );
 
-    // Construct the iframe element
-    $video_element = sprintf(
-      '<iframe src="%s" frameborder="0" allow="autoplay; loop; fullscreen" allowfullscreen class="wp-block-cover__video-background" style=" pointer-events:none;"></iframe>',
-      esc_url($embed_url)
-    );
-
-    // Insert the video element before the closing </div> tag of the cover block
-    $block_content = preg_replace(
-      '/<\/div>\s*$/',
-      $video_element . '</div>',
-      $block_content,
-      1
-    );
+          // Move the video element to be directly inside the wp-block-cover.
+          $block_content = preg_replace(
+              '/(<div class="wp-block-cover[^"]*">)/',
+              '$1' . $video_element,
+              $block_content,
+              1
+          );
+      }
   }
 
   return $block_content;
 }
 
-// Hook your function into the render_block filter
 add_filter('render_block', 'kindling_modify_cover_block_output', 10, 2);
 
 
