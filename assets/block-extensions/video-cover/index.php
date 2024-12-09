@@ -17,39 +17,40 @@ function kindling_register_cover_block_attributes()
 }
 add_action('init', 'kindling_register_cover_block_attributes');
 
-function kindling_modify_cover_block_output($block_content, $block) {
+function kindling_modify_cover_block_output($block_content, $block)
+{
   if (!is_array($block) || !isset($block['blockName'])) {
-      return $block_content;
+    return $block_content;
   }
 
   if ($block['blockName'] !== 'core/cover') {
-      return $block_content;
+    return $block_content;
   }
 
   $attributes = $block['attrs'] ?? [];
 
   if (!empty($attributes['videoUrl'])) {
-      $video_url = esc_url_raw($attributes['videoUrl']);
-      $youtube_id = kindling_get_youtube_id($video_url);
+    $video_url = esc_url_raw($attributes['videoUrl']);
+    $youtube_id = kindling_get_youtube_id($video_url);
 
-      if ($youtube_id) {
-          // Construct the YouTube embed URL.
-          $embed_url = 'https://www.youtube.com/embed/' . $youtube_id . '?autoplay=1&loop=1&mute=1&playlist=' . $youtube_id . '&controls=0&showinfo=0&modestbranding=1&rel=0';
+    if ($youtube_id) {
+      // Construct the YouTube embed URL.
+      $embed_url = 'https://www.youtube.com/embed/' . $youtube_id . '?autoplay=1&loop=1&mute=1&playlist=' . $youtube_id . '&controls=0&showinfo=0&modestbranding=1&rel=0';
 
-          // Create the iframe.
-          $video_element = sprintf(
-              '<iframe src="%s" frameborder="0" allow="autoplay; loop; fullscreen" allowfullscreen class="wp-block-cover__video-background" style="pointer-events:none;"></iframe>',
-              esc_url($embed_url)
-          );
+      // Create the iframe.
+      $video_element = sprintf(
+        '<iframe src="%s" frameborder="0" allow="autoplay; loop; fullscreen" allowfullscreen class="wp-block-cover__video-background" style="pointer-events:none;"></iframe>',
+        esc_url($embed_url)
+      );
 
-          // Move the video element to be directly inside the wp-block-cover.
-          $block_content = preg_replace(
-              '/(<div class="wp-block-cover[^"]*">)/',
-              '$1' . $video_element,
-              $block_content,
-              1
-          );
-      }
+      // Move the video element to be directly inside the wp-block-cover.
+      $block_content = preg_replace(
+        '/(<span[^>]*class="wp-block-cover__background[^"]*"[^>]*>.*?<\/span>)/s',
+        '$1' . $video_element,
+        $block_content,
+        1
+      );
+    }
   }
 
   return $block_content;
