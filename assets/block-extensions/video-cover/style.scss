@@ -5,13 +5,13 @@
 }
 
 .wp-block-cover__video-background {
-  height: 300%;
-  left: 0;
-  object-fit: cover;
   position: absolute;
-  top: -100%;
-  width: 300%;
-  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%) scale(1.5); // this could change based on aspect ration of container
+  pointer-events: none;
 }
 
 .wp-block-cover__inner-container {
@@ -20,48 +20,48 @@
 }
 
 @media screen and (min-width: 375px) {
-  .wp-block-cover__video-background {
-    height: 260%;
-    top: -80%;
-    width: 260%;
-  }
+  // .wp-block-cover__video-background {
+  //   height: 260%;
+  //   top: -80%;
+  //   width: 260%;
+  // }
 }
 
 @media screen and (min-width: 425px) {
-  .wp-block-cover__video-background {
-    height: 250%;
-    top: -75%;
-    width: 250%;
-  }
+  // .wp-block-cover__video-background {
+  //   height: 250%;
+  //   top: -75%;
+  //   width: 250%;
+  // }
 }
 
 @media screen and (min-width: 768px) {
-  .wp-block-cover__video-background {
-    height: 150%;
-    left: -10%;
-    top: -25%;
-    width: 150%;
-  }
+  // .wp-block-cover__video-background {
+  //   height: 150%;
+  //   left: -10%;
+  //   top: -25%;
+  //   width: 150%;
+  // }
 }
 
 @media screen and (min-width: 1024px) {
-  .wp-block-cover__video-background {
-    left: -25%;
-  }
+  // .wp-block-cover__video-background {
+  //   left: -25%;
+  // }
 }
 
 @media screen and (min-width: 1440px) {
-  .wp-block-cover__video-background {
-    height: 275%;
-    left: -88%;
-    width: 275%;
-  }
+  // .wp-block-cover__video-background {
+  //   height: 275%;
+  //   left: -88%;
+  //   width: 275%;
+  // }
 }
 
 @media screen and (min-width: 2560px) {
-  .wp-block-cover__video-background {
-    height: 350%;
-    left: -125%;
-    width: 350%;
-  }
+  // .wp-block-cover__video-background {
+  //   height: 350%;
+  //   left: -125%;
+  //   width: 350%;
+  // }
 }
