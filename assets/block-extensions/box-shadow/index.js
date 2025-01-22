@@ -8,6 +8,7 @@ import { RadioControl } from '@wordpress/components';
 import { InspectorAdvancedControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { addFilter } from '@wordpress/hooks';
+import { __ } from '@wordpress/i18n';
 
 const blocksWithBoxShadow = [ 'core/group', 'core/column', 'core/cover' ];
 
@@ -56,16 +57,16 @@ export const shadowAdvancedControls = createHigherOrderComponent((BlockEdit) => 
         {isSelected && (blocksWithBoxShadow.includes( props.name )) &&
           <InspectorAdvancedControls>
             <RadioControl
-              label="Box Shadow"
-              help="The size of the box shadow"
+              label={__('Box Shadow', 'kindling')}
+              help={__('The size of the box shadow', 'kindling')}
               selected={ boxShadow }
               options={[
-                { label: 'None', value: 'none' },
-                { label: 'X-Small', value: 'xs' },
-                { label: 'Small', value: 'sm' },
-                { label: 'Medium', value: 'md' },
-                { label: 'Large', value: 'large' },
-              ] }
+                { label: __('None', 'kindling'), value: 'none' },
+                { label: __('X-Small', 'kindling'), value: 'xs' },
+                { label: __('Small', 'kindling'), value: 'sm' },
+                { label: __('Medium', 'kindling'), value: 'md' },
+                { label: __('Large', 'kindling'), value: 'large' },
+              ]}
               onChange={(value) => setAttributes({ boxShadow: String(value) }) }
             />
           </InspectorAdvancedControls>

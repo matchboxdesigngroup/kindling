@@ -2,6 +2,7 @@
  * WordPress Dependencies
  */
 const { createHigherOrderComponent } = wp.compose;
+const { __ } = wp.i18n;
 
 // Create a higher order component to wrap the existing block.
 // eslint-disable-next-line no-unused-vars
@@ -27,9 +28,9 @@ const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
       <Fragment>
         <BlockEdit {...props} />
         <InspectorControls>
-          <PanelBody title="Additional Settings" initialOpen={true}>
+          <PanelBody title={__('Additional Settings', 'kindling')} initialOpen={true}>
             <ToggleControl
-              label="Remove links underline"
+              label={__('Remove links underline', 'kindling')}
               checked={removeUnderline}
               onChange={(newVal) => {
                 const newClassName = newVal

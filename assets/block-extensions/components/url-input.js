@@ -109,17 +109,17 @@ const URLInput = ( {
 	const advancedOptions = (
 		<>
 			<ToggleControl
-				label={ __( 'Open in New Tab', 'block-options' ) }
+				label={ __( 'Open in New Tab', 'kindling' ) }
 				onChange={ onSetNewTab }
 				checked={ opensInNewTab }
 			/>
 			<ToggleControl
-				label={ __( 'No Follow', 'block-options' ) }
+				label={ __( 'No Follow', 'kindling' ) }
 				onChange={ onSetLinkNoFollow }
 				checked={ linkNoFollow }
 			/>
 			<ToggleControl
-				label={ __( 'Sponsored', 'block-options' ) }
+				label={ __( 'Sponsored', 'kindling' ) }
 				onChange={ onSetLinkSponsored }
 				checked={ linkSponsored }
 			/>
@@ -140,8 +140,8 @@ const URLInput = ( {
 				className="components-toolbar__control"
 				label={
 					url ?
-						__( 'Edit link', 'block-options' ) :
-						__( 'Insert link', 'block-options' )
+						__( 'Edit link', 'kindling' ) :
+						__( 'Insert link', 'kindling' )
 				}
 				aria-expanded={ isOpen }
 				onClick={ openLinkUI }
@@ -173,7 +173,7 @@ const URLInput = ( {
 							/>
 							<Button
 								icon="no"
-								label={ __( 'Remove link', 'block-options' ) }
+								label={ __( 'Remove link', 'kindling' ) }
 								onClick={ onLinkRemove }
 							/>
 						</>

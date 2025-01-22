@@ -2,6 +2,7 @@
  * WordPress dependencies
  */
 import { registerBlockType } from '@wordpress/blocks';
+import { __ } from '@wordpress/i18n';
 
 /**
  * Internal dependencies
@@ -12,7 +13,7 @@ import Save from './save';
 
 // Export this so we can use it in the edit and save files
 export const innerBlocksTemplate = [
-  [ 'kindling/slide-block', { placeholder: 'Enter slide content...' } ],
+  [ 'kindling/slide-block', { placeholder: __( 'Enter slide content...', 'kindling' ) } ],
 ];
 
 // Register the block
