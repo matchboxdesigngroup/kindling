@@ -2,6 +2,7 @@ import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { PanelBody, SelectControl, RangeControl, ToggleControl } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
 
 // Specify allowed blocks to which the attributes should be added
 const allowedBlocks = [
@@ -56,63 +57,63 @@ const withInspectorControls = createHigherOrderComponent((BlockEdit) => {
         <>
           <BlockEdit {...props} />
           <InspectorControls>
-            <PanelBody title="Animation Settings" initialOpen={true}>
+            <PanelBody title={__('Animation Settings', 'kindling')} initialOpen={true}>
               <SelectControl
-                label="Select Animation"
+                label={__('Select Animation', 'kindling')}
                 value={attributes.animation}
                 options={[
-                  { label: 'None', value: '' },
-                  { label: 'Fade', value: 'fade' },
-                  { label: 'Fade Up', value: 'fade-up' },
-                  { label: 'Fade Down', value: 'fade-down' },
-                  { label: 'Fade Left', value: 'fade-left' },
-                  { label: 'Fade Right', value: 'fade-right' },
-                  { label: 'Fade Up Right', value: 'fade-up-right' },
-                  { label: 'Fade Up Left', value: 'fade-up-left' },
-                  { label: 'Fade Down Right', value: 'fade-down-right' },
-                  { label: 'Fade Down Left', value: 'fade-down-left' },
-                  { label: 'Flip Up', value: 'flip-up' },
-                  { label: 'Flip Down', value: 'flip-down' },
-                  { label: 'Flip Left', value: 'flip-left' },
-                  { label: 'Flip Right', value: 'flip-right' },
-                  { label: 'Slide Up', value: 'slide-up' },
-                  { label: 'Slide Down', value: 'slide-down' },
-                  { label: 'Slide Left', value: 'slide-left' },
-                  { label: 'Slide Right', value: 'slide-right' },
-                  { label: 'Zoom In', value: 'zoom-in' },
-                  { label: 'Zoom In Up', value: 'zoom-in-up' },
-                  { label: 'Zoom In Down', value: 'zoom-in-down' },
-                  { label: 'Zoom In Left', value: 'zoom-in-left' },
-                  { label: 'Zoom In Right', value: 'zoom-in-right' },
-                  { label: 'Zoom Out', value: 'zoom-out' },
-                  { label: 'Zoom Out Up', value: 'zoom-out-up' },
-                  { label: 'Zoom Out Down', value: 'zoom-out-down' },
-                  { label: 'Zoom Out Left', value: 'zoom-out-left' },
-                  { label: 'Zoom Out Right', value: 'zoom-out-right' }
+                  { label: __('None', 'kindling'), value: '' },
+                  { label: __('Fade', 'kindling'), value: 'fade' },
+                  { label: __('Fade Up', 'kindling'), value: 'fade-up' },
+                  { label: __('Fade Down', 'kindling'), value: 'fade-down' },
+                  { label: __('Fade Left', 'kindling'), value: 'fade-left' },
+                  { label: __('Fade Right', 'kindling'), value: 'fade-right' },
+                  { label: __('Fade Up Right', 'kindling'), value: 'fade-up-right' },
+                  { label: __('Fade Up Left', 'kindling'), value: 'fade-up-left' },
+                  { label: __('Fade Down Right', 'kindling'), value: 'fade-down-right' },
+                  { label: __('Fade Down Left', 'kindling'), value: 'fade-down-left' },
+                  { label: __('Flip Up', 'kindling'), value: 'flip-up' },
+                  { label: __('Flip Down', 'kindling'), value: 'flip-down' },
+                  { label: __('Flip Left', 'kindling'), value: 'flip-left' },
+                  { label: __('Flip Right', 'kindling'), value: 'flip-right' },
+                  { label: __('Slide Up', 'kindling'), value: 'slide-up' },
+                  { label: __('Slide Down', 'kindling'), value: 'slide-down' },
+                  { label: __('Slide Left', 'kindling'), value: 'slide-left' },
+                  { label: __('Slide Right', 'kindling'), value: 'slide-right' },
+                  { label: __('Zoom In', 'kindling'), value: 'zoom-in' },
+                  { label: __('Zoom In Up', 'kindling'), value: 'zoom-in-up' },
+                  { label: __('Zoom In Down', 'kindling'), value: 'zoom-in-down' },
+                  { label: __('Zoom In Left', 'kindling'), value: 'zoom-in-left' },
+                  { label: __('Zoom In Right', 'kindling'), value: 'zoom-in-right' },
+                  { label: __('Zoom Out', 'kindling'), value: 'zoom-out' },
+                  { label: __('Zoom Out Up', 'kindling'), value: 'zoom-out-up' },
+                  { label: __('Zoom Out Down', 'kindling'), value: 'zoom-out-down' },
+                  { label: __('Zoom Out Left', 'kindling'), value: 'zoom-out-left' },
+                  { label: __('Zoom Out Right', 'kindling'), value: 'zoom-out-right' },
                 ]}
                 onChange={(animation) => setAttributes({ animation })}
               />
               <SelectControl
-                label="Easing"
+                label={__('Easing', 'kindling')}
                 value={attributes.aosEasing}
                 options={[
-                  { label: 'Ease', value: 'ease' },
-                  { label: 'Ease In', value: 'ease-in' },
-                  { label: 'Ease Out', value: 'ease-out' },
-                  { label: 'Ease In Out', value: 'ease-in-out' },
-                  { label: 'Linear', value: 'linear' },
+                  { label: __('Ease', 'kindling'), value: 'ease' },
+                  { label: __('Ease In', 'kindling'), value: 'ease-in' },
+                  { label: __('Ease Out', 'kindling'), value: 'ease-out' },
+                  { label: __('Ease In Out', 'kindling'), value: 'ease-in-out' },
+                  { label: __('Linear', 'kindling'), value: 'linear' },
                 ]}
                 onChange={(aosEasing) => setAttributes({ aosEasing })}
               />
               <RangeControl
-                label="Duration (ms)"
+                label={__('Duration (ms)', 'kindling')}
                 value={attributes.aosDuration}
                 onChange={(aosDuration) => setAttributes({ aosDuration })}
                 min={0}
                 max={5000}
               />
               <RangeControl
-                label="Delay (ms)"
+                label={__('Delay (ms)', 'kindling')}
                 value={attributes.aosDelay}
                 onChange={(aosDelay) => setAttributes({ aosDelay })}
                 min={0}

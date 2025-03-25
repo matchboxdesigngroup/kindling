@@ -9,7 +9,7 @@ import { ColorPalette, InspectorControls, BlockControls } from '@wordpress/block
 import { PanelBody, Toolbar, ToolbarGroup, ToolbarDropdownMenu, MenuGroup, MenuItem } from '@wordpress/components';
 
 registerBlockType('kindling/custom-search-link', {
-  title: __( 'Search Link', 'kindling-custom-search-link' ),
+  title: __( 'Search Link', 'kindling' ),
   icon: 'search',
   category: 'design',
 
@@ -30,22 +30,22 @@ registerBlockType('kindling/custom-search-link', {
     const iconSizes = [
       {
           name: 'small',
-          title: __('Small', 'kindling-custom-search-link'),
+          title: __('Small', 'kindling'),
           sizeClass: 'has-small-icon-size',
       },
       {
           name: 'medium',
-          title: __('Medium', 'kindling-custom-search-link'),
+          title: __('Medium', 'kindling'),
           sizeClass: 'has-medium-icon-size',
       },
       {
           name: 'large',
-          title: __('Large', 'kindling-custom-search-link'),
+          title: __('Large', 'kindling'),
           sizeClass: 'has-large-icon-size',
       },
       {
           name: 'huge',
-          title: __('Huge', 'kindling-custom-search-link'),
+          title: __('Huge', 'kindling'),
           sizeClass: 'has-huge-icon-size',
       },
     ];
@@ -55,8 +55,8 @@ registerBlockType('kindling/custom-search-link', {
         <BlockControls>
         <ToolbarGroup>
           <ToolbarDropdownMenu
-              label={__('Size', 'kindling-custom-search-link')}
-              text={__('Size', 'kindling-custom-search-link')}
+              label={__('Size', 'kindling')}
+              text={__('Size', 'kindling')}
               icon={null}
           >
             { ({ onClose }) => (
@@ -83,7 +83,7 @@ registerBlockType('kindling/custom-search-link', {
           </ToolbarGroup>
         </BlockControls>
         <InspectorControls>
-          <PanelBody title={ __('Icon Color', 'kindling-custom-search-link') }>
+          <PanelBody title={ __('Icon Color', 'kindling') }>
             <ColorPalette
               value={ iconColor }
               onChange={ (newColor) => setAttributes({ iconColor: newColor }) }

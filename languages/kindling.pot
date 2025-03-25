@@ -1,0 +1,489 @@
+# Copyright (C) 2025 Matchbox Design Group
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Kindling 3.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/kindling\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-01-22T12:17:03+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: kindling\n"
+
+#. Theme Name of the theme
+msgid "Kindling"
+msgstr ""
+
+#. Description of the theme
+msgid "A starter Block Theme built using Tailwind CSS and bud.js."
+msgstr ""
+
+#. Author of the theme
+msgid "Matchbox Design Group"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://matchboxdesigngroup.com"
+msgstr ""
+
+#: inc/block-patterns.php:20
+msgid "Kindling - Components"
+msgstr ""
+
+#: inc/block-patterns.php:25
+msgid "Kindling - Page Layouts"
+msgstr ""
+
+#: inc/block-patterns.php:30
+msgid "Kindling - Page Sections"
+msgstr ""
+
+#: inc/block-patterns.php:35
+msgid "Kindling - Blog layouts"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:60
+msgid "Animation Settings"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:62
+msgid "Select Animation"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:65
+#: assets/block-extensions/box-shadow/index.js:64
+msgid "None"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:66
+msgid "Fade"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:67
+msgid "Fade Up"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:68
+msgid "Fade Down"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:69
+msgid "Fade Left"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:70
+msgid "Fade Right"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:71
+msgid "Fade Up Right"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:72
+msgid "Fade Up Left"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:73
+msgid "Fade Down Right"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:74
+msgid "Fade Down Left"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:75
+msgid "Flip Up"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:76
+msgid "Flip Down"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:77
+msgid "Flip Left"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:78
+msgid "Flip Right"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:79
+msgid "Slide Up"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:80
+msgid "Slide Down"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:81
+msgid "Slide Left"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:82
+msgid "Slide Right"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:83
+msgid "Zoom In"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:84
+msgid "Zoom In Up"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:85
+msgid "Zoom In Down"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:86
+msgid "Zoom In Left"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:87
+msgid "Zoom In Right"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:88
+msgid "Zoom Out"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:89
+msgid "Zoom Out Up"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:90
+msgid "Zoom Out Down"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:91
+msgid "Zoom Out Left"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:92
+msgid "Zoom Out Right"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:97
+msgid "Easing"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:100
+msgid "Ease"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:101
+msgid "Ease In"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:102
+msgid "Ease Out"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:103
+msgid "Ease In Out"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:104
+msgid "Linear"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:109
+msgid "Duration (ms)"
+msgstr ""
+
+#: assets/block-extensions/aos-animation/index.js:116
+msgid "Delay (ms)"
+msgstr ""
+
+#: assets/block-extensions/box-shadow/index.js:60
+msgid "Box Shadow"
+msgstr ""
+
+#: assets/block-extensions/box-shadow/index.js:61
+msgid "The size of the box shadow"
+msgstr ""
+
+#: assets/block-extensions/box-shadow/index.js:65
+msgid "X-Small"
+msgstr ""
+
+#: assets/block-extensions/box-shadow/index.js:66
+#: assets/blocks/search-icon/index.js:33
+msgid "Small"
+msgstr ""
+
+#: assets/block-extensions/box-shadow/index.js:67
+#: assets/blocks/search-icon/index.js:38
+msgid "Medium"
+msgstr ""
+
+#: assets/block-extensions/box-shadow/index.js:68
+#: assets/blocks/search-icon/index.js:43
+msgid "Large"
+msgstr ""
+
+#: assets/block-extensions/components/url-input.js:112
+msgid "Open in New Tab"
+msgstr ""
+
+#: assets/block-extensions/components/url-input.js:117
+msgid "No Follow"
+msgstr ""
+
+#: assets/block-extensions/components/url-input.js:122
+msgid "Sponsored"
+msgstr ""
+
+#: assets/block-extensions/components/url-input.js:143
+msgid "Edit link"
+msgstr ""
+
+#: assets/block-extensions/components/url-input.js:144
+msgid "Insert link"
+msgstr ""
+
+#: assets/block-extensions/components/url-input.js:176
+msgid "Remove link"
+msgstr ""
+
+#: assets/block-extensions/link-underline/index.js:31
+msgid "Additional Settings"
+msgstr ""
+
+#: assets/block-extensions/link-underline/index.js:33
+msgid "Remove links underline"
+msgstr ""
+
+#: assets/block-extensions/mobile-site-logo/index.js:59
+#: build/block-extensions/mobile-site-logo.js:1
+msgid "Mobile Logo"
+msgstr ""
+
+#: assets/block-extensions/mobile-site-logo/index.js:68
+#: build/block-extensions/mobile-site-logo.js:1
+msgid "Mobile Logo Settings"
+msgstr ""
+
+#: assets/block-extensions/mobile-site-logo/index.js:76
+#: build/block-extensions/mobile-site-logo.js:1
+msgid "Replace Mobile Logo"
+msgstr ""
+
+#: assets/block-extensions/mobile-site-logo/index.js:76
+#: build/block-extensions/mobile-site-logo.js:1
+msgid "Select Mobile Logo"
+msgstr ""
+
+#: assets/block-extensions/mobile-site-logo/index.js:84
+#: build/block-extensions/mobile-site-logo.js:1
+msgid "Mobile Logo Width (px)"
+msgstr ""
+
+#: assets/block-extensions/safe-svg/index.js:46
+#: assets/blocks/search-icon/index.js:86
+msgid "Icon Color"
+msgstr ""
+
+#: assets/blocks/search-icon/index.js:12
+msgid "Search Link"
+msgstr ""
+
+#: assets/blocks/search-icon/index.js:48
+msgid "Huge"
+msgstr ""
+
+#: assets/blocks/search-icon/index.js:58
+#: assets/blocks/search-icon/index.js:59
+msgid "Size"
+msgstr ""
+
+#: assets/blocks/slide/index.js:16
+msgid "Enter slide content..."
+msgstr ""
+
+#: assets/blocks/slider/index.js:14
+msgid "Slider"
+msgstr ""
+
+#: assets/blocks/slider/index.js:82
+msgid "Enter content."
+msgstr ""
+
+#: assets/blocks/slider/index.js:152
+msgid "Add Slide"
+msgstr ""
+
+#: assets/blocks/slider/index.js:155
+msgid "Editing slide"
+msgstr ""
+
+#: assets/blocks/slider/index.js:166
+msgid "Previous"
+msgstr ""
+
+#: assets/blocks/slider/index.js:174
+msgid "Next"
+msgstr ""
+
+#: assets/scripts/iconLibrary.js:84
+#: build/iconLibrary.js:1
+msgid "Cantor Icons"
+msgstr ""
+
+#: assets/acf-blocks/block-name/block.json
+#: build/acf-blocks/block-name/block.json
+msgctxt "block title"
+msgid "Block Name"
+msgstr ""
+
+#: assets/acf-blocks/block-name/block.json
+#: build/acf-blocks/block-name/block.json
+msgctxt "block description"
+msgid "An sample ACF block"
+msgstr ""
+
+#: assets/acf-blocks/block-name/block.json
+#: build/acf-blocks/block-name/block.json
+msgctxt "block keyword"
+msgid "example"
+msgstr ""
+
+#: assets/blocks/slide/block.json
+#: build/blocks/slide/block.json
+msgctxt "block title"
+msgid "Slide"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "2X Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large Heading"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Proxima Nova"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "DIN Pro"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "System Font"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "White"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Black"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Grey"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Light Grey"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Medium Grey"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Grey"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Blue"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Blue"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Green"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Green"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "1"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "2"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "3"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "5"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "6"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer"
+msgstr ""

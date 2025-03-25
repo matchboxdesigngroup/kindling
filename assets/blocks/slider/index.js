@@ -4,13 +4,14 @@ import { Toolbar, ToolbarButton, Card, CardBody, Button } from '@wordpress/compo
 import { chevronLeft, chevronRight, plus } from '@wordpress/icons';
 import { useDispatch, useSelect } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 /**
  * Register a new block type for managing slides
  */
 registerBlockType( 'kindling/slider', {
   apiVersion: 2,
-  title: 'Slider',
+  title: __( 'Slider', 'kindling' ),
   category: 'layout',
   icon: 'id',
 
@@ -78,7 +79,7 @@ registerBlockType( 'kindling/slider', {
       // Create a new slide block
       const slideBlock = createBlock('kindling/slide', { className: 'editor-inactive-block' }, [
         // Create a paragraph block with a placeholder
-        createBlock('core/paragraph', { placeholder: 'Enter content.' }),
+        createBlock('core/paragraph', { placeholder: __( 'Enter content.', 'kindling' ) }),
       ]);
 
       // Replace the inner blocks with the new slide block
@@ -148,10 +149,10 @@ registerBlockType( 'kindling/slider', {
             isPrimary
             onClick={addNewSlide}
           >
-            Add Slide
+            {__( 'Add Slide', 'kindling' )}
           </Button>
 
-          <p>Editing slide {`${activeBlockIndex + 1} of ${numOfBlocks}`}</p>
+          <p>{ __( 'Editing slide', 'kindling' ) } {`${activeBlockIndex + 1} of ${numOfBlocks}`}</p>
 
           <div
             className='kindling-block-header__button-wrapper'
@@ -162,7 +163,7 @@ registerBlockType( 'kindling/slider', {
               onClick={handlePrev}
               variant='secondary'
             >
-              Previous
+              { __( 'Previous', 'kindling' ) }
             </Button>
             <Button
               className='kindling-block-header__button next'
@@ -170,7 +171,7 @@ registerBlockType( 'kindling/slider', {
               onClick={handleNext}
               variant='secondary'
             >
-              Next
+              { __( 'Next', 'kindling' ) }
             </Button>
           </div>
 

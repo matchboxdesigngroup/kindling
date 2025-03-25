@@ -8,6 +8,7 @@ import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { ColorPalette, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 function addIconColorAttribute(settings, name) {
   if (name !== 'safe-svg/svg-icon') { // Replace with the actual block name
@@ -42,7 +43,7 @@ const addSafeSvgCustomColorInspectorControls = createHigherOrderComponent((Block
           <BlockEdit {...props} />
         </div>
         <InspectorControls>
-          <PanelBody title={ 'Icon Color' }>
+          <PanelBody title={__('Icon Color', 'kindling')}>
           <ColorPalette
             value={ attributes.iconColor }
             onChange={ (newColor) => {
