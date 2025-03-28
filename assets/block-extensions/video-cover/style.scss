@@ -1,0 +1,36 @@
+.wp-block-cover {
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+}
+
+.wp-block-cover__video-background {
+  height: 300%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300%;
+  z-index: 0;
+}
+
+.wp-block-cover__inner-container {
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (min-width: 1441px) {
+  .wp-block-cover__video-background {
+    height: 400%;
+    width: 400%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .wp-block-cover__video-background {
+    height: 500%;
+    width: 500%;
+  }
+}
