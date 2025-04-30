@@ -1,9 +1,9 @@
 <?php
 /**
  * Registers block patterns for the theme.
- * 
- * @since TBD
- * 
+ *
+ * @since 4.0.0
+ *
  * @return void
  */
 function register_theme_patterns() {
