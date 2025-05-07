@@ -3,6 +3,7 @@
 	"settings": {
 		"appearanceTools": true,
 		"layout": {
+			"allowCustomContentAndWideSize": false,
 			"contentSize": "620px",
 			"wideSize": "1000px"
 		},
