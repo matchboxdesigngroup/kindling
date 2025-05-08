@@ -3,8 +3,8 @@
 	"settings": {
 		"appearanceTools": true,
 		"layout": {
-			"contentSize": "620px",
-			"wideSize": "1000px"
+			"contentSize": "1200px",
+			"wideSize": "1400px"
 		},
 		"spacing": {
 			"units": [
@@ -26,6 +26,18 @@
 			]
 		},
 		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-font)"
+		},
+		"blocks": {
+			"core/button": {
+				"border": {
+					"radius": "0px"
+				}
+			}
+		  }
 	},
 	"templateParts": [
 		{
