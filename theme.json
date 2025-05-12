@@ -36,7 +36,7 @@
 				},
 				{
 					"name": "6 / 120px",
-					"size": "clamp(2.5rem, 2.75rem + ((1vw - 0.48rem) * 9.096), 7.5rem)",
+					"size": "clamp(2.75rem, 2.75rem + ((1vw - 0.48rem) * 9.096), 7.5rem)",
 					"slug": "60"
 				},
 				{
