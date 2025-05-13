@@ -57,6 +57,10 @@
 		"typography": {
 			"defaultFontSizes": false,
 			"dropCap": false,
+			"fluid": {
+				"maxViewportWidth": "1450px",
+				"minViewportWidth": "390px"
+			},
 			"fontFamilies": [
 				{
 					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
