@@ -3,8 +3,8 @@
 	"settings": {
 		"appearanceTools": true,
 		"layout": {
-			"contentSize": "620px",
-			"wideSize": "1000px"
+			"contentSize": "1200px",
+			"wideSize": "1440px"
 		},
 		"spacing": {
 			"units": [
@@ -26,6 +26,27 @@
 			]
 		},
 		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"spacing": {
+			"blockGap": "1.5rem",
+			"padding": {
+				"bottom": "0",
+				"left": "var(--wp--preset--spacing--30)",
+				"right": "var(--wp--preset--spacing--30)",
+				"top": "0"
+			}
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-font)"
+		},
+		"blocks": {
+			"core/button": {
+				"border": {
+					"radius": "0px"
+				}
+			}
+		}
 	},
 	"templateParts": [
 		{
