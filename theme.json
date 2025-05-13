@@ -7,6 +7,44 @@
 			"wideSize": "1440px"
 		},
 		"spacing": {
+			"defaultSpacingSizes": false,
+			"spacingSizes": [
+				{
+					"name": "1 / 24px",
+					"size": "1.5rem",
+					"slug": "10"
+				},
+				{
+					"name": "2 / 32px",
+					"size": "clamp(1.5rem, 5vw, 2rem)",
+					"slug": "20"
+				},
+				{
+					"name": "3 / 40px",
+					"size": "clamp(1.875rem, 1.875rem + ((1vw - 0.48rem) * 2.885), 2.5rem)",
+					"slug": "30"
+				},
+				{
+					"name": "4 / 56px",
+					"size": "clamp(2rem, 2rem + ((1vw - 0.48rem) * 2.885), 3.5rem)",
+					"slug": "40"
+				},
+				{
+					"name": "5 / 72px",
+					"size": "clamp(2.5rem, 2rem + ((1vw - 0.48rem) * 5), 4.5rem)",
+					"slug": "50"
+				},
+				{
+					"name": "6 / 120px",
+					"size": "clamp(2.75rem, 2.75rem + ((1vw - 0.48rem) * 9.096), 7.5rem)",
+					"slug": "60"
+				},
+				{
+					"name": "7 / 160px",
+					"size": "clamp(3.5rem, 14vw, 10rem)",
+					"slug": "70"
+				}
+			],
 			"units": [
 				"%",
 				"px",
