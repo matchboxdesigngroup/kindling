@@ -129,7 +129,10 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--system-font)"
+			"fontFamily": "var(--wp--preset--font-family--system-font)",
+			"fontStyle": "normal",
+			"fontWeight": "300",
+			"lineHeight": "1.75"
 		},
 		"blocks": {
 			"core/button": {
