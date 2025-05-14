@@ -1,6 +1,33 @@
 {
 	"settings": {
 		"appearanceTools": true,
+		"color": {
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"palette": [
+				{
+					"color": "#F76B48",
+					"name": "Brand 01",
+					"slug": "brand-01"
+				},
+				{
+					"color": "#336BB7",
+					"name": "Brand 02",
+					"slug": "brand-02"
+				},
+				{
+					"color": "#F3F4F0",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#0E2324",
+					"name": "Contrast",
+					"slug": "contrast"
+				}
+			]
+		},
 		"layout": {
 			"contentSize": "1200px",
 			"wideSize": "1440px"
