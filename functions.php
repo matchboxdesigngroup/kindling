@@ -2,7 +2,7 @@
 /**
  * This file adds functions to the Kindling WordPress theme.
  *
- * @package kidnling
+ * @package kindling
  * @author  Matchbox Design Group
  * @license GNU General Public License v2 or later
  * @link    https://github.com/matchboxdesigngroup/kindling
