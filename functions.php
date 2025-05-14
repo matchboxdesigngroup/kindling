@@ -9,6 +9,23 @@
  */
 
 namespace Kindling;
+
+/**
+ * Set up theme defaults and register various WordPress features.
+ *
+ * @since 4.0.0
+ *
+ * @return void
+ */
+function setup() {
+
+	// Enqueue editor styles and fonts.
+	add_editor_style( 'style.css' );
+
+	// Remove core block patterns.
+	remove_theme_support( 'core-block-patterns' );
+}
+add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 /**
  * Registers block patterns for the theme.
  *
