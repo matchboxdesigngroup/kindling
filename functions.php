@@ -1,5 +1,50 @@
 <?php
 /**
+ * This file adds functions to the Kindling WordPress theme.
+ *
+ * @package kindling
+ * @author  Matchbox Design Group
+ * @license GNU General Public License v2 or later
+ * @link    https://github.com/matchboxdesigngroup/kindling
+ */
+
+namespace Kindling;
+
+/**
+ * Set up theme defaults and register various WordPress features.
+ *
+ * @since 4.0.0
+ *
+ * @return void
+ */
+function setup() {
+
+	// Enqueue editor styles and fonts.
+	add_editor_style( 'style.css' );
+
+	// Remove core block patterns.
+	remove_theme_support( 'core-block-patterns' );
+}
+add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
+
+/**
+ * Enqueue styles.
+ *
+ * @since Kindling 4.0.0
+ *
+ * @return void
+ */
+function enqueue_styles() {
+	wp_enqueue_style(
+		sanitize_title( __NAMESPACE__ ),
+		get_parent_theme_file_uri( 'style.css' ),
+		array(),
+		wp_get_theme()->get( 'Version' )
+	);
+}
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_styles' );
+
+/**
  * Registers block patterns for the theme.
  *
  * @since 4.0.0
