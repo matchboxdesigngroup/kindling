@@ -189,4 +189,4 @@ function register_theme_patterns() {
 	}
 }
 
-add_action( 'init', 'register_theme_patterns' );
+add_action( 'init', __NAMESPACE__ . '\register_theme_patterns' );
