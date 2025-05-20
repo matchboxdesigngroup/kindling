@@ -2,9 +2,19 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"settings": {
 		"appearanceTools": true,
+		"custom": {
+			"layout": {
+				"full-viewport-width": "calc(100vw - var(--wp--custom--layout--scrollbar-width, 0px))",
+				"main-content-width-side-spacing": "calc((var(--wp--custom--layout--full-viewport-width) - var(--wp--style--global--content-size)) / 2)",
+				"main-wide-width-side-spacing": "calc((var(--wp--custom--layout--full-viewport-width) - var(--wp--style--global--wide-size)) / 2)",
+				"scrollbar-width": "0px",
+				"site-content-width": "calc(var(--wp--custom--layout--full-viewport-width) - (2 * var(--wp--custom--layout--site-outer-padding)))",
+				"site-outer-padding": "max(var(--wp--preset--spacing--16, 1rem), env(safe-area-inset-left))"
+			}
+		},
 		"layout": {
-			"contentSize": "1200px",
-			"wideSize": "1440px"
+			"contentSize": "min(680px, var(--wp--custom--layout--site-content-width))",
+			"wideSize": "min(1200px, var(--wp--custom--layout--site-content-width))"
 		},
 		"spacing": {
 			"defaultSpacingSizes": false,
