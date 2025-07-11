@@ -35,11 +35,22 @@ A block theme for WordPress that supports the Full Site Editing features.
 
 > **Note**: The following entries serve as basic guidelines and can be removed in the future after a few version releases.
 
-### [3.0.0] 2024-12-19
+## [4.0.0] 2024-12-19
 
-- **Added** - For new features. [ticketId]
-- **Changed** - For changes in existing functionality. [ticketId]
-- **Deprecated** - For soon-to-be removed features. [ticketId]
-- **Fixed** - For any bug fixes. [ticketId]
-- **Removed** - For now removed features. [ticketId]
-- **Security** - In case of vulnerabilities.. [ticketId]
+### Added
+- For new features. [ticketId]
+
+### Changed
+- For changes in existing functionality. [ticketId]
+
+### Deprecated 
+- For soon-to-be removed features. [ticketId]
+
+### Fixed
+- For any bug fixes. [ticketId]
+
+### Removed
+- For now removed features. [ticketId]
+
+### Security 
+- In case of vulnerabilities. [ticketId]
