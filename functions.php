@@ -1,160 +1,192 @@
 <?php
-
 /**
- * Functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * This file adds functions to the Kindling WordPress theme.
  *
  * @package kindling
- * @since 3.0.0
+ * @author  Matchbox Design Group
+ * @license GNU General Public License v2 or later
+ * @link    https://github.com/matchboxdesigngroup/kindling
  */
 
+namespace Kindling;
+
 /**
- * The theme version.
+ * Set up theme defaults and register various WordPress features.
  *
- * @since 3.0.0
- */
-define('KINDLING_VERSION', wp_get_theme()->get('Version'));
-
-/**
- * Check if the WordPress version is 6.0 or higher, and if the PHP version is at least 7.4.
- * If not, do not activate.
- */
-if (version_compare($GLOBALS['wp_version'], '6.0-RC4-53425', '<') || version_compare(PHP_VERSION_ID, '70400', '<')) {
-  include get_template_directory() . '/inc/back-compat.php';
-  return;
-}
-
-/**
- * Add theme support for block styles and editor style.
- *
- * @since 3.0.0
+ * @since 4.0.0
  *
  * @return void
  */
-function kindling_setup()
-{
-  add_theme_support('wp-block-styles');
+function setup() {
 
-  remove_theme_support('core-block-patterns');
+	// Enqueue editor styles and fonts.
+	add_editor_style( 'style.css' );
+
+	// Remove core block patterns.
+	remove_theme_support( 'core-block-patterns' );
 }
-add_action('after_setup_theme', 'kindling_setup');
+add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 
 /**
- * Enqueue the CSS files.
+ * Enqueue styles.
  *
- * @since 3.0.0
+ * @since Kindling 4.0.0
  *
  * @return void
  */
-function kindling_styles()
-{
-  wp_enqueue_style(
-    'kindling-style',
-    get_stylesheet_uri(),
-    [],
-    KINDLING_VERSION
-  );
-  wp_enqueue_style(
-    'front',
-    get_theme_file_uri('build/front.css'),
-    [],
-    filemtime(get_template_directory() . '/build/front.css')
-  );
+function enqueue_styles() {
+	wp_enqueue_style(
+		sanitize_title( __NAMESPACE__ ),
+		get_parent_theme_file_uri( 'style.css' ),
+		array(),
+		wp_get_theme()->get( 'Version' )
+	);
 }
-add_action('wp_enqueue_scripts', 'kindling_styles');
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_styles' );
 
 /**
- * Enqueue the JS files.
+ * Registers block patterns for the theme.
  *
- * @since 3.0.0
+ * @since 4.0.0
  *
  * @return void
  */
-function kindling_scripts()
-{
-  wp_enqueue_script(
-    'front',
-    get_theme_file_uri('build/front.js'),
-    [],
-    filemtime(get_template_directory() . '/build/front.js')
-  );
+function register_theme_patterns() {
+	// Check if register_block_pattern exists (WordPress 5.5+).
+	if ( ! function_exists( 'register_block_pattern' ) ) {
+		return;
+	}
+
+	$patterns_dir = get_stylesheet_directory() . '/patterns/';
+	if ( ! is_dir( $patterns_dir ) ) {
+		return;
+	}
+
+	$pattern_files = glob( $patterns_dir . '*.php' );
+	if ( ! $pattern_files ) {
+		return;
+	}
+
+	foreach ( $pattern_files as $file ) {
+		$raw_content = file_get_contents( $file );
+		if ( ! $raw_content ) {
+			continue;
+		}
+
+		// Extract the doc block header lines and content.
+		$header = [];
+		$content = '';
+
+		// Split file lines.
+		$lines = preg_split( '/\r\n|\r|\n/', $raw_content );
+
+		// We'll parse from the start until we hit the first non-comment line or closing PHP tag.
+		$in_header = false;
+
+		foreach ( $lines as $line ) {
+			// Trim whitespace.
+			$trimmed = trim( $line );
+
+			// Detect start of header doc block: `/**` or `/*`
+			if ( preg_match( '/^\/\*\*/', $trimmed ) ) {
+				$in_header = true;
+				continue;
+			}
+			
+			// Detect end of doc block: `*/`
+			if ( preg_match( '/\*\//', $trimmed ) ) {
+				$in_header = false;
+				continue;
+			}
+
+			if ( $in_header ) {
+				// Example line: ` * Title: My Pattern`.
+				// Remove leading ` *`.
+				$line_str = preg_replace( '/^(\s*\*\s?)/', '', $trimmed );
+
+				// Now see if it matches "Key: Value".
+				if ( strpos( $line_str, ':' ) !== false ) {
+					$parts = explode( ':', $line_str, 2 );
+					$key   = sanitize_text_field( trim( $parts[0] ) ); // e.g. "Title".
+					$val   = sanitize_text_field( trim( $parts[1] ) ); // e.g. "My Pattern".
+					
+					$header[ strtolower( $key ) ] = $val;
+				}
+			} else {
+				// Once doc block is finished, the rest is content.
+				$content .= $line . "\n";  
+			}
+		}
+
+		// Map doc block keys to pattern registration array 
+		// e.g. Title => 'title', Slug => 'slug', Categories => 'categories'.
+		$pattern_args = [
+			'title'      => $header['title'] ?? null,
+			'slug'       => $header['slug'] ?? null,
+			'categories' => [],
+			'content'    => '',
+			'blockTypes' => [],
+			'postTypes'  => [],
+			'inserter'   => true,
+		];
+
+		// If "Categories: cat1, cat2", convert to array.
+		if ( ! empty( $header['categories'] ) ) {
+			// E.g. "matchbox/media, matchbox/featured, matchbox/gallery"
+			$cats = array_map( 'trim', explode( ',', $header['categories'] ) );
+			$pattern_args['categories'] = $cats;
+		}
+		
+		// If "Block Types: core/paragraph, core/quote", etc.
+		if ( ! empty( $header['block types'] ) ) {
+			$blocks = array_map( 'trim', explode( ',', $header['block types'] ) );
+			$pattern_args['blockTypes'] = $blocks;
+		}
+		
+		// If "Post Types: post, page".
+		if ( ! empty( $header['post types'] ) ) {
+			$posts = array_map( 'trim', explode( ',', $header['post types'] ) );
+			$pattern_args['postTypes'] = $posts;
+		}
+		
+		// If "Inserter: false" or "Inserter: true".
+		if ( isset( $header['inserter'] ) ) {
+			$pattern_args['inserter'] = ( 'true' === strtolower( $header['inserter'] ) );
+		}
+
+		// 'Slug' should follow the format 'namespace/pattern-slug' like 'matchbox/instagram-grid'.
+		$name = $pattern_args['slug'] ? sanitize_title( $pattern_args['slug'] ) : null;
+
+		// Bail if we don't have a name or title.
+		if ( ! $pattern_args['title'] || ! $name ) {
+			continue;
+		}
+
+		// Now that $content is fully built, remove any stray PHP tags:
+		$content = str_replace( '<?php', '', $content );
+		$content = str_replace( '?>', '', $content );
+
+		// The remaining file content is block markup.
+		$pattern_args['content'] = $content;
+
+		// Use 'Slug: namespace-pattern-slug' as 'name' => 'namespace/pattern-slug' or extract a prefix.
+		$pattern_name = ( false === strpos( $name, '/' ) )
+			? 'theme/' . $name // fallback.
+			: $name;
+
+		// Register the pattern.
+		register_block_pattern(
+			$pattern_name,
+			[
+				'title'      => $pattern_args['title'],
+				'categories' => $pattern_args['categories'],
+				'blockTypes' => $pattern_args['blockTypes'],
+				'postTypes'  => $pattern_args['postTypes'],
+				'inserter'   => $pattern_args['inserter'],
+				'content'    => $pattern_args['content'],
+			]
+		);
+	}
 }
-add_action('wp_enqueue_scripts', 'kindling_scripts');
 
-/**
- * Enqueue the editor JS files.
- *
- * @since 3.0.0
- *
- * @return void
- */
-function kindling_editor_assets()
-{
-  // There are additional dependencies that can be added. For example `wp-data` but we want to keep this as lean as possible in the base theme. You may add more if needed in your project.
-  wp_enqueue_script(
-    'editor-js',
-    get_theme_file_uri('build/editor.js'),
-    ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor', 'wp-dom-ready', 'wp-edit-post', 'wp-block-editor'],
-    filemtime(get_template_directory() . '/build/editor.js')
-  );
-  wp_enqueue_style(
-    'editor',
-    get_theme_file_uri('build/editor.css'),
-    [],
-    filemtime(get_template_directory() . '/build/editor.css')
-  );
-
-  // Block Variations
-  wp_enqueue_script(
-    'kindling-block-variations',
-    get_theme_file_uri('build/blockVariations.js'),
-    array('wp-blocks', 'wp-i18n', 'wp-dom-ready'),
-    filemtime(get_template_directory() . '/build/blockVariations.js'), // Version for cache busting.
-    true // In footer.
-  );
-
-  // Site Logo block extension - Mobile logo
-  wp_enqueue_script(
-    'kindling/mobile-site-logo',
-    get_theme_file_uri('build/block-extensions/mobile-site-logo.js'),
-    array('wp-blocks', 'wp-i18n', 'wp-components', 'wp-block-editor', 'wp-hooks'),
-    filemtime(get_template_directory() . '/build/block-extensions/mobile-site-logo.js'), // Version for cache busting.
-    true // In footer.
-  );
-}
-add_action('enqueue_block_editor_assets', 'kindling_editor_assets');
-
-// Helpers.
-require_once get_theme_file_path('inc/helpers.php');
-
-// ACF Blocks.
-require_once get_theme_file_path('inc/api.php');
-require_once get_theme_file_path('inc/acf-blocks.php');
-
-// Authors.
-require_once get_theme_file_path('inc/authors.php');
-
-// Block styles.
-require_once get_theme_file_path('inc/block-styles.php');
-
-// Block variations.
-//require_once get_theme_file_path( 'inc/register-block-variations.php' );
-
-// Block patterns.
-require_once get_theme_file_path('inc/block-patterns.php');
-
-// Block renders.
-require_once get_theme_file_path('inc/block-renders.php');
-
-// Disable comments
-require_once get_theme_file_path('inc/comments.php');
-
-// Google Analytics
-require_once get_theme_file_path('inc/google-analytics.php');
-
-// Theme Options Page
-require_once get_theme_file_path('inc/options-page.php');
-
-// Shortcodes
-require_once get_theme_file_path('inc/shortcodes.php');
+add_action( 'init', __NAMESPACE__ . '\register_theme_patterns' );
