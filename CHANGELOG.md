@@ -3,9 +3,9 @@
 **Author:** Matchbox Design Group  
 **Author URI:** [https://matchboxdesigngroup.com](https://matchboxdesigngroup.com)  
 **Tags:** full-site-editing, editor-style, block-styles, block-patterns, accessibility-ready  
-**Requires at least:** 6.0  
+**Requires at least:** 6.6
 **Stable tag:** 3.0.0  
-**Tested up to:** 6.3  
+**Tested up to:** 6.8.2 
 **Requires PHP:** 8.2  
 **License:** GPLv2 or later  
 **License URI:** [http://www.gnu.org/licenses/gpl-2.0.html](http://www.gnu.org/licenses/gpl-2.0.html)
