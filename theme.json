@@ -3,6 +3,12 @@
 	"settings": {
 		"appearanceTools": true,
 		"custom": {
+			"border": {
+				"rounded-full": "calc(infinity * 1px)",
+				"rounded-large": "24px",
+				"rounded-medium": "16px",
+				"rounded-small": "8px"
+			},
 			"layout": {
 				"full-viewport-width": "calc(100vw - var(--wp--custom--layout--scrollbar-width, 0px))",
 				"main-content-width-side-spacing": "calc((var(--wp--custom--layout--full-viewport-width) - var(--wp--style--global--content-size)) / 2)",
