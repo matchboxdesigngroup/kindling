@@ -23,27 +23,27 @@
 			"palette": [
 				{
 					"slug": "theme-01",
-					"name": "Ivory",
+					"name": "Theme-01",
 					"color": "#F5F5EF"
 				},
 				{
 					"slug": "theme-02",
-					"name": "Dark",
+					"name": "Theme-02",
 					"color": "#0E2030"
 				},
 				{
 					"slug": "theme-03",
-					"name": "Cobalt",
+					"name": "Theme-03",
 					"color": "#093C59"
 				},
 				{
 					"slug": "theme-04",
-					"name": "Aqua",
+					"name": "Theme-04",
 					"color": "#35B4C6"
 				},
 				{
 					"slug": "theme-05",
-					"name": "Gold",
+					"name": "Theme-05",
 					"color": "#FBAF19"
 				}
 			]
