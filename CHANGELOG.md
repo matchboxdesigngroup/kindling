@@ -54,3 +54,14 @@ A block theme for WordPress that supports the Full Site Editing features.
 
 ### Security 
 - In case of vulnerabilities. [ticketId]
+
+
+## [TBD] TBD
+
+### Added
+- Draft documentation for the `theme.json` token system at [Kindling Docs](https://kindling.matchbox.host/getting-started/kindling-theme-json/).
+
+### Changed
+- Updated `theme.json` to bring it closer to a production-ready starter.
+- Trimmed down color palette and gradients for a leaner base.
+- Standardized semantic tokens for colors, buttons, borders, and typography.
