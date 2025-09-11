@@ -190,3 +190,22 @@ function register_theme_patterns() {
 }
 
 add_action( 'init', __NAMESPACE__ . '\register_theme_patterns' );
+
+/**
+ * Enqueue block styles.
+ *
+ * @since Kindling 4.0.0
+ *
+ * @return void
+ */
+function enqueue_block_styles() {
+	wp_enqueue_block_style(
+		'matchbox/grid-item',
+		[
+			'handle' => 'kindling-block-matchbox-grid-item',
+			'src'    => get_theme_file_uri( 'assets/blocks/matchbox-grid-system.css' ),
+			'path'   => get_theme_file_path( 'assets/blocks/matchbox-grid-system.css' ),
+		]
+	);
+}
+add_action( 'init', __NAMESPACE__ . '\enqueue_block_styles' );

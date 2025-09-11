@@ -1,0 +1,12 @@
+{
+	"title": "Full to 1/4",
+	"slug": "grid-item-span-full-to-one-quarter",
+	"blockTypes": [
+		"matchbox/grid-item"
+	],
+	"styles": {
+		"css": "grid-column: span 3;"
+	},
+	"version": 3,
+	"$schema": "https://schemas.wp.org/trunk/theme.json"
+}
