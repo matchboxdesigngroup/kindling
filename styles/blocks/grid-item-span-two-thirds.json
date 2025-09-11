@@ -1,0 +1,12 @@
+{
+	"title": "2/3",
+	"slug": "grid-item-span-two-thirds",
+	"blockTypes": [
+		"matchbox/grid-item"
+	],
+	"styles": {
+		"css": "grid-column: span 8;"
+	},
+	"version": 3,
+	"$schema": "https://schemas.wp.org/trunk/theme.json"
+}

@@ -1,0 +1,12 @@
+{
+	"title": "Full to 1/2",
+	"slug": "grid-item-span-full-to-half",
+	"blockTypes": [
+		"matchbox/grid-item"
+	],
+	"styles": {
+		"css": "grid-column: span 6;"
+	},
+	"version": 3,
+	"$schema": "https://schemas.wp.org/trunk/theme.json"
+}
