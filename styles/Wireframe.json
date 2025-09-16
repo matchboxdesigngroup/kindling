@@ -1,0 +1,153 @@
+{
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"gradients": [
+				{
+					"gradient": "linear-gradient(90deg, #E5E7EB 0%, #9CA3AF 100%)",
+					"name": "Gradient-01",
+					"slug": "gradient-01"
+				},
+				{
+					"gradient": "linear-gradient(90deg, #374151 0%, #080d1c 100%)",
+					"name": "Gradient-02",
+					"slug": "gradient-02"
+				}
+			],
+			"palette": [
+				{
+					"color": "#FFFFFF",
+					"name": "Theme-01",
+					"slug": "theme-01"
+				},
+				{
+					"color": "#080d1c",
+					"name": "Theme-02",
+					"slug": "theme-02"
+				},
+				{
+					"color": "#9CA3AF",
+					"name": "Theme-03",
+					"slug": "theme-03"
+				},
+				{
+					"color": "#374151",
+					"name": "Theme-04",
+					"slug": "theme-04"
+				},
+				{
+					"color": "#3B82F6",
+					"name": "Theme-05",
+					"slug": "theme-05"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "min(760px, var(--wp--custom--layout--site-content-width))",
+			"wideSize": "min(1200px, var(--wp--custom--layout--site-content-width))"
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"dropCap": false,
+			"fluid": {
+				"maxViewportWidth": "1440px",
+				"minViewportWidth": "425px"
+			},
+			"fontFamilies": [
+				{
+					"name": "BLOKK Neue",
+					"slug": "blokk-neue",
+					"fontFamily": "BLOKK Neue",
+					"fontFace": [
+						{
+							"fontFamily": "\"BLOKK Neue\"",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/blokk-neue/BLOKKNeue-Regular.woff2"
+							]
+						}
+					]
+				},
+				{
+					"name": "Open Sans",
+					"slug": "open-sans",
+					"fontFamily": "\"Open Sans\", sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "\"Open Sans\"",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/open-sans/open-sans-400-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "\"Open Sans\"",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/open-sans/open-sans-700-normal.woff2"
+							]
+						}
+					]
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "Small",
+					"slug": "small",
+					"size": "0.75rem"
+				},
+				{
+					"name": "Medium (Base)",
+					"slug": "medium",
+					"size": "1rem"
+				},
+				{
+					"name": "Large",
+					"slug": "large",
+					"size": "1.3125rem",
+					"fluid": {
+						"min": "1.3125rem",
+						"max": "1.6875rem"
+					}
+				},
+				{
+					"name": "Extra Large",
+					"slug": "x-large",
+					"size": "1.9688rem",
+					"fluid": {
+						"min": "1.9688rem",
+						"max": "2.5313rem"
+					}
+				},
+				{
+					"name": "Extra Extra Large",
+					"slug": "xx-large",
+					"size": "2.9531rem",
+					"fluid": {
+						"min": "2.9531rem",
+						"max": "3.7969rem"
+					}
+				}
+			]
+		},
+		"custom": {
+			"fontFamily": {
+				"body": "var(--wp--preset--font-family--blokk-neue)",
+				"heading": "var(--wp--preset--font-family--blokk-neue)"
+			}
+		}
+	},
+	"styles": {
+		"typography": {
+			"lineHeight": "1"
+		}
+	},
+	"version": 3,
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json"
+}
