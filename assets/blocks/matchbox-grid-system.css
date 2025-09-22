@@ -9,6 +9,7 @@
 	.is-style-grid-item-span-full-to-one-third,
 	.is-style-grid-item-span-full-to-two-thirds,
 	.is-style-grid-item-span-full-to-one-quarter,
+	.is-style-grid-item-span-full-to-three-quarters,
 	.is-style-grid-item-span-full-to-three-quarters {
 		grid-column: span 6;
 	}
