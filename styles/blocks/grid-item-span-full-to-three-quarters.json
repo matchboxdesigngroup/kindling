@@ -2,7 +2,7 @@
 	"title": "Full to 3/4",
 	"slug": "grid-item-span-full-to-three-quarters",
 	"blockTypes": [
-		"matchbox/grid-item"
+		"kindling/grid-item"
 	],
 	"styles": {
 		"css": "grid-column: span 9;"

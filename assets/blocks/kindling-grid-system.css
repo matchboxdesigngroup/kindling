@@ -1,5 +1,5 @@
 @media (max-width: 767px) {
-	.is-style-matchbox-grid-system {
+	.is-style-kindling-grid-system {
 		grid-template-columns: repeat(6, 1fr) !important;
 		gap: var(--wp--preset--spacing--20);
 	}

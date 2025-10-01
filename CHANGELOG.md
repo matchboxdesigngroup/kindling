@@ -60,7 +60,7 @@ A block theme for WordPress that supports the Full Site Editing features.
 
 ### Added
 - Draft documentation for the `theme.json` token system at [Kindling Docs](https://kindling.matchbox.host/getting-started/kindling-theme-json/).
-- Introduced Matchbox Grid System styles to Kindling for consistent layout support.
+- Introduced Kindling Grid System styles to Kindling for consistent layout support.
 
 ### Changed
 - Updated `theme.json` to bring it closer to a production-ready starter.
