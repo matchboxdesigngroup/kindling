@@ -2,7 +2,7 @@
 	"title": "1/2",
 	"slug": "grid-item-span-half",
 	"blockTypes": [
-		"matchbox/grid-item"
+		"kindling/grid-item"
 	],
 	"styles": {
 		"css": "grid-column: span 6;"

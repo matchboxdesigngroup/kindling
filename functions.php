@@ -132,7 +132,7 @@ function register_theme_patterns() {
 
 		// If "Categories: cat1, cat2", convert to array.
 		if ( ! empty( $header['categories'] ) ) {
-			// E.g. "matchbox/media, matchbox/featured, matchbox/gallery"
+			// E.g. "kindling/media, kindling/featured, kindling/gallery"
 			$cats = array_map( 'trim', explode( ',', $header['categories'] ) );
 			$pattern_args['categories'] = $cats;
 		}
@@ -154,7 +154,7 @@ function register_theme_patterns() {
 			$pattern_args['inserter'] = ( 'true' === strtolower( $header['inserter'] ) );
 		}
 
-		// 'Slug' should follow the format 'namespace/pattern-slug' like 'matchbox/instagram-grid'.
+		// 'Slug' should follow the format 'namespace/pattern-slug' like 'kindling/instagram-grid'.
 		$name = $pattern_args['slug'] ? sanitize_title( $pattern_args['slug'] ) : null;
 
 		// Bail if we don't have a name or title.
@@ -200,11 +200,11 @@ add_action( 'init', __NAMESPACE__ . '\register_theme_patterns' );
  */
 function enqueue_block_styles() {
 	wp_enqueue_block_style(
-		'matchbox/grid-item',
+		'kindling/grid-item',
 		[
-			'handle' => 'kindling-block-matchbox-grid-item',
-			'src'    => get_theme_file_uri( 'assets/blocks/matchbox-grid-system.css' ),
-			'path'   => get_theme_file_path( 'assets/blocks/matchbox-grid-system.css' ),
+			'handle' => 'kindling-block-grid-item',
+			'src'    => get_theme_file_uri( 'assets/blocks/kindling-grid-system.css' ),
+			'path'   => get_theme_file_path( 'assets/blocks/kindling-grid-system.css' ),
 		]
 	);
 }
