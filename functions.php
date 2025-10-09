@@ -209,3 +209,5 @@ function enqueue_block_styles() {
 	);
 }
 add_action( 'init', __NAMESPACE__ . '\enqueue_block_styles' );
+
+include_once get_parent_theme_file_path( 'inc/kindling-blocks-promoter.php' );
