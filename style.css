@@ -1,23 +1,121 @@
 /*
 Theme Name: Kindling
+Theme URI: https://github.com/matchboxdesigngroup/kindling
 Author: Matchbox Design Group
 Author URI: https://matchboxdesigngroup.com
-Theme URI:
-Description: A starter Block Theme built using Tailwind CSS and bud.js.
-Tags: full-site-editing, editor-style, block-styles, block-patterns, accessibility-ready
-Text Domain: kindling
-Version: 3.0.0
-Requires at least: 6.0
-Requires PHP: 8.2
-Tested up to: 6.3
-
+Description: A modern, responsive, and accessible block theme for WordPress.
+Version: 4.0.0
+Requires at least: 6.7
+Tested up to: 6.7.2
+Requires PHP: 8.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: kindling
 
-All files, unless otherwise stated, are released under the GNU General Public
-License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned
-with others.
+Kindling WordPress Theme, (C) 2025 Matchbox Design Group, LLC.
+Kindling is distributed under the terms of the GNU GPL.
 */
+
+/**
+ * 1.0 CSS Reset
+ *
+ * Resetting the CSS to a more sane starting point.
+ */
+
+/* Use a more-intuitive box-sizing model. */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+ 
+/* Allow percentage-based heights in the application. */
+html,
+body,
+.wp-site-blocks {
+	min-height: 100%;
+}
+
+/* Remove height from the admin bar of the overall height. */
+html {
+	height: calc(100% - var(--wp-admin--admin-bar--height, 0px));
+}
+
+/* Ensure the best type rendering. */
+:root {
+	font-feature-settings: "kern";
+	font-kerning: normal;
+	text-rendering: optimizeLegibility;
+}
+
+/* Improve text rendering. */
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Improve media defaults. */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+/* Remove built-in form typography styles. */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Avoid text overflows. */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+	text-wrap: pretty; /* pretty is the nicer result but it isn't supported as well. So balance is here as a fallback */
+}
+
+p {
+	text-wrap: pretty;
+}
+
+/* Create a root stacking context. */
+.wp-site-blocks {
+	isolation: isolate;
+}
+
+/* Ensure the alt text is visible when an image is missing. */
+img {
+	font-size: 1rem;
+	font-style: italic;
+	line-height: 1.5;
+}
+
+/* Set the scroll behavior to smooth. */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Enable view transitions. */
+@view-transition {
+	navigation: auto;
+}

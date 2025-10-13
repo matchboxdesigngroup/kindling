@@ -1,0 +1,54 @@
+@media (max-width: 767px) {
+	.is-style-kindling-grid-system {
+		grid-template-columns: repeat(6, 1fr) !important;
+		gap: var(--wp--preset--spacing--20);
+	}
+
+	.is-style-grid-item-span-full,
+	.is-style-grid-item-span-full-to-half,
+	.is-style-grid-item-span-full-to-one-third,
+	.is-style-grid-item-span-full-to-two-thirds,
+	.is-style-grid-item-span-full-to-one-quarter,
+	.is-style-grid-item-span-full-to-three-quarters,
+	.is-style-grid-item-span-full-to-three-quarters {
+		grid-column: span 6;
+	}
+
+	.is-style-grid-item-span-half {
+		grid-column: span 3;
+	}
+
+	.is-style-grid-item-span-one-third {
+		grid-column: span 2;
+	}
+
+	.is-style-grid-item-span-two-thirds {
+		grid-column: span 4;
+	}
+}
+
+/* s: 768–1023px */
+@media (max-width: 1023px) {
+	.is-style-grid-item-span-full-to-one-third,
+	.is-style-grid-item-span-full-to-two-thirds {
+		grid-column: span 6 !important;
+	}
+}
+
+/* m: 1024–1439px */
+@media (min-width: 1024px) {
+	.is-style-grid-item-span-full-to-one-third.has-offset-1 {
+		grid-column: 2 / span 4;
+	}
+}
+
+/* l: 1440–1767px */
+@media (min-width: 1440px) {
+	.is-style-grid-system {
+		gap: var(--wp--preset--spacing--40);
+	}
+}
+
+/* xl: 1768px+ */
+@media (min-width: 1768px) {
+}
