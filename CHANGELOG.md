@@ -33,36 +33,6 @@ A block theme for WordPress that supports the Full Site Editing features.
 
 ## Changelog
 
-> **Note**: The following entries serve as basic guidelines and can be removed in the future after a few version releases.
+## [4.0.0] — TBD
 
-## [4.0.0] 2024-12-19
-
-### Added
-- For new features. [ticketId]
-
-### Changed
-- For changes in existing functionality. [ticketId]
-
-### Deprecated 
-- For soon-to-be removed features. [ticketId]
-
-### Fixed
-- For any bug fixes. [ticketId]
-
-### Removed
-- For now removed features. [ticketId]
-
-### Security 
-- In case of vulnerabilities. [ticketId]
-
-
-## [TBD] TBD
-
-### Added
-- Draft documentation for the `theme.json` token system at [Kindling Docs](https://kindling.matchbox.host/getting-started/kindling-theme-json/).
-- Introduced Kindling Grid System styles to Kindling for consistent layout support.
-
-### Changed
-- Updated `theme.json` to bring it closer to a production-ready starter.
-- Trimmed down color palette and gradients for a leaner base.
-- Standardized semantic tokens for colors, buttons, borders, and typography.
+First official release of the **Kindling** WordPress block theme.
