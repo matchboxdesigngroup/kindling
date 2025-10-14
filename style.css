@@ -11,6 +11,7 @@ Requires PHP: 8.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: kindling
+Tags: full-site-editing, block-theme, accessibility-ready, editor-style, block-patterns, responsive-layout
 
 Kindling WordPress Theme, (C) 2025 Matchbox Design Group, LLC.
 Kindling is distributed under the terms of the GNU GPL.
@@ -28,7 +29,7 @@ Kindling is distributed under the terms of the GNU GPL.
 *::after {
 	box-sizing: border-box;
 }
- 
+
 /* Allow percentage-based heights in the application. */
 html,
 body,
@@ -43,7 +44,7 @@ html {
 
 /* Ensure the best type rendering. */
 :root {
-	font-feature-settings: "kern";
+	font-feature-settings: 'kern';
 	font-kerning: normal;
 	text-rendering: optimizeLegibility;
 }
