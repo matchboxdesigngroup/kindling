@@ -19,6 +19,13 @@ namespace Kindling;
  */
 function setup() {
 
+	/**
+	 * Make theme available for translation.
+	 * - Text domain: 'kindling'
+	 * - Translation files location: /languages (e.g. /languages/kindling.pot, .mo, .po)
+	 */
+	load_theme_textdomain( 'kindling', get_template_directory() . '/languages' );
+
 	// Enqueue editor styles and fonts.
 	add_editor_style( 'style.css' );
 
