@@ -45,11 +45,18 @@ function enqueue_styles() {
 	wp_enqueue_style(
 		sanitize_title( __NAMESPACE__ ),
 		get_parent_theme_file_uri( 'style.css' ),
-		array(),
-		wp_get_theme()->get( 'Version' )
+		[],
+		filemtime( get_parent_theme_file_path( 'style.css' ) )
+	);
+
+	wp_enqueue_style(
+		'kindling/styles',
+		get_theme_file_uri( 'assets/css/styles.css' ),
+		[],
+		filemtime( get_theme_file_path( 'assets/css/styles.css' ) )
 	);
 }
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_styles' );
+add_action( 'enqueue_block_assets', __NAMESPACE__ . '\enqueue_styles' );
 
 /**
  * Registers block patterns for the theme.
@@ -210,8 +217,8 @@ function enqueue_block_styles() {
 		'kindling/grid-item',
 		[
 			'handle' => 'kindling-block-grid-item',
-			'src'    => get_theme_file_uri( 'assets/blocks/kindling-grid-system.css' ),
-			'path'   => get_theme_file_path( 'assets/blocks/kindling-grid-system.css' ),
+			'src'    => get_theme_file_uri( 'assets/css/block-styles/kindling-grid-system.css' ),
+			'path'   => get_theme_file_path( 'assets/css/block-styles/kindling-grid-system.css' ),
 		]
 	);
 }
